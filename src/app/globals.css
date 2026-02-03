@@ -1,5 +1,7 @@
-@import "../assets/styles/common/button.css";
 @import "tailwindcss";
+@import "../assets/styles/common/button.css";
+@import "../assets/styles/home/adventureTypeSlider.css";
+@import "../assets/styles/home/topPackages.css";
 
 
 :root {
@@ -24,15 +26,25 @@
   --border-light: #e5e7eb;
 
   /* Shadows */
-  --shadow-sm: 0 2px 6px rgba(0,0,0,0.06);
-  --shadow-md: 0 8px 24px rgba(0,0,0,0.12);
-  --shadow-glass: 0 10px 40px rgba(0,0,0,0.15);
+  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --shadow-glass: 0 10px 40px rgba(0, 0, 0, 0.15);
 
   /* Radius */
   --radius-sm: 8px;
   --radius-md: 14px;
   --radius-lg: 20px;
 }
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 
 
 body {

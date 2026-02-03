@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 300" preserveAspectRatio="none">
+  <rect width="100" height="300" fill="white"></rect>
+
+  <!-- left cuts -->
+  <circle cx="0" cy="45" r="20" fill="black"></circle>
+  <circle cx="0" cy="105" r="20" fill="black"></circle>
+  <circle cx="0" cy="165" r="20" fill="black"></circle>
+  <circle cx="0" cy="225" r="20" fill="black"></circle>
+
+  <!-- right cuts -->
+  <circle cx="100" cy="45" r="20" fill="black"></circle>
+  <circle cx="100" cy="105" r="20" fill="black"></circle>
+  <circle cx="100" cy="165" r="20" fill="black"></circle>
+  <circle cx="100" cy="225" r="20" fill="black"></circle>
+</svg>
