@@ -1,11 +1,12 @@
-import HeroSection from "@/components/home/HeroSection";
-import SliderSection from "@/components/home/SliderSection";
+
+import AdventureTypeSlider from "@/components/home/AdventureTypeSlider";
+import TopPackages from "@/components/home/TopPackages";
 
 export default function Home() {
   return (
     <>
-      <HeroSection />
-      <SliderSection />
-    </>
+      <AdventureTypeSlider />
+      <TopPackages />
+        </>
   );
 }
