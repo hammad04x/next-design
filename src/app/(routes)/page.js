@@ -7,6 +7,7 @@ import Footer from "@/components/layout/Footer";
 
 import AdventureTypeSlider from "@/components/home/AdventureTypeSlider";
 import TopPackages from "@/components/home/TopPackages";
+import TravelSlider from "@/components/home/TravelSlider";
 
 export default function Home() {
     return (
@@ -19,6 +20,7 @@ export default function Home() {
             <TopPackages />
             <PopularDestinations />
             <AlsoLikeSection />
+            <TravelSlider />
             <Footer />
         </>
     );
