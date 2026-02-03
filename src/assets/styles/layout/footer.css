@@ -1,0 +1,176 @@
+.footer {
+  background-color: #eaf3fc;
+  padding-top: 4rem;
+  width: 100%;
+}
+
+.footer-container {
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* MAIN 3 SECTION GRID */
+.footer-content {
+  display: grid;
+  grid-template-columns: 1.4fr 2fr 1.4fr;
+  gap: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+/* Brand Section */
+.footer-brand {
+  max-width: 360px;
+}
+
+.footer-logo {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #2cb3ff;
+  margin-bottom: 1rem;
+}
+
+.footer-description {
+  color: #333;
+  max-width: 300px;
+  margin-bottom: 1.5rem;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+/* Social Icons */
+.footer-social {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.footer-social-link {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #444;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #444;
+  transition: all 0.3s ease;
+}
+
+.footer-social-link:hover {
+  background: #2cb3ff;
+  color: white;
+  border-color: #2cb3ff;
+}
+
+/* Places Column */
+.places-column {
+  max-width: 420px;
+}
+
+.dual-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+/* RIGHT SIDE SECTION */
+.right-combined {
+  display: flex;
+  flex-direction: column;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.right-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.sub-column {
+  max-width: 200px;
+}
+
+/* Lists */
+.footer-heading {
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+}
+
+.footer-list {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-list li {
+  font-size: 0.88rem;
+  margin-bottom: 0.6rem;
+  color: #333;
+}
+
+/* ADDRESS STYLE - MATCH IMAGE */
+.footer-address {
+  margin-top: 30px;
+  font-size: 13px;
+  line-height: 1.6;
+  max-width: 500px;
+}
+
+.footer-address-label {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+ 
+ .footer-address-text {
+  display: block;
+} 
+
+
+/* Copyright */
+.footer-copyright {
+  background: white;
+  text-align: center;
+  padding: 1.2rem;
+  font-size: 0.85rem;
+  border-top: 1px solid #ddd;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .footer-content {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .right-combined {
+    grid-column: 1 / -1;
+  }
+
+  .dual-list {
+    grid-template-columns: 1fr;
+  }
+
+  .right-columns {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+  }
+
+  .right-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-brand {
+    max-width: 100%;
+  }
+
+  .footer-description {
+    max-width: 100%;
+  }
+}

@@ -4,6 +4,11 @@ import SliderSection from "@/components/home/AlsoLikeSection";
 import Navbar from "@/components/layout/Navbar";
 import AlsoLikeSection from "@/components/home/AlsoLikeSection";
 import PopularDestinations from "@/components/home/PopularDestinations";
+import SliderSection from "@/components/home/SliderSection";
+import Footer from "@/components/layout/Footer";
+
+import AdventureTypeSlider from "@/components/home/AdventureTypeSlider";
+import TopPackages from "@/components/home/TopPackages";
 
 export default function Home() {
   return (
@@ -14,6 +19,12 @@ export default function Home() {
       </div>
       <PopularDestinations/>
       <AlsoLikeSection/>
+      {/* <HeroSection />
+      <SliderSection /> */}
+      <Footer/>
     </>
+      <AdventureTypeSlider />
+      <TopPackages />
+        </>
   );
 }

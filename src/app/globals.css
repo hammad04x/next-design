@@ -1,6 +1,9 @@
 @import "../assets/styles/common/button.css";
 @import "../assets/styles/layout/navbar.css";
 @import "tailwindcss";
+@import "../assets/styles/common/button.css";
+@import "../assets/styles/home/adventureTypeSlider.css";
+@import "../assets/styles/home/topPackages.css";
 
 
   :root {
@@ -34,6 +37,47 @@
     --radius-md: 14px;
     --radius-lg: 20px;
   }
+:root {
+  /* Brand */
+  --primary: #2fa4ff;
+  --primary-dark: #1c84e3;
+  --primary-soft: #e9f5ff;
+
+  /* Backgrounds */
+  --bg-main: #f3f9ff;
+  --bg-section: #ffffff;
+  --bg-glass: rgba(255, 255, 255, 0.65);
+  --bg-footer: #eaf4ff;
+
+  /* Text */
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --text-light: #ffffff;
+
+  /* Borders & lines */
+  --border-soft: #dbeafe;
+  --border-light: #e5e7eb;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --shadow-glass: 0 10px 40px rgba(0, 0, 0, 0.15);
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 
 
 body {
@@ -45,3 +89,4 @@ body {
 
 .hide-scrollbar::-webkit-scrollbar { display: none; }
 .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+}
