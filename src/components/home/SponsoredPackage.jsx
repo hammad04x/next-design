@@ -128,7 +128,7 @@ export default function SponsoredPackage() {
         <section className="py-16 px-4 sm:px-6 lg:px-8" style={{ background: 'linear-gradient(to bottom, #eef6ff 0%, #ffffff 100%)' }}>
             <TicketClipDef />
 
-            <div className="max-w-[1400px] mx-auto bg-white rounded-[28px] p-8 lg:p-12"
+            <div className="max-w-[7xl]  mx-auto bg-white rounded-[28px] p-8 lg:p-12"
                 style={{ boxShadow: '0 10px 40px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.04)' }}>
 
                 {/* Header */}

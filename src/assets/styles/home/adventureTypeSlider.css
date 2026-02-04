@@ -7,7 +7,6 @@
   flex: 0 0 auto;
   height: 135px;
   overflow: hidden;
-  box-shadow: var(--shadow-md);
   cursor: pointer;
 }
 

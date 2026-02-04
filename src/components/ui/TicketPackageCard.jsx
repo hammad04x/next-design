@@ -15,7 +15,7 @@ export default function TicketPackageCard({ p, sponsored = false }) {
                 </div>
 
                 {sponsored && (
-                    <div className="absolute -top-[-6px] -left-[10px] z-30">
+                    <div className="absolute -top-[-6px] -left-[6px] z-30">
                         <div className="relative">
 
                             {/* main label */}
@@ -33,17 +33,7 @@ export default function TicketPackageCard({ p, sponsored = false }) {
                                 Sponsor
                             </div>
 
-                            {/* folded corner */}
-                            <div
-                                className="absolute top-0 left-0"
-                                style={{
-                                    width: 0,
-                                    height: 0,
-                                    borderStyle: "solid",
-                                    borderWidth: "22px 22px 0 0",
-                                    borderColor: "#d68b00 transparent transparent transparent",
-                                }}
-                            />
+                           
                         </div>
                     </div>
                 )}

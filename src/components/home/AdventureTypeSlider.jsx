@@ -1,12 +1,13 @@
 "use client";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useRef } from "react";
+import AdventureCard from "./AdventureCard";
 
 const items = [
     { title: "Trekking", img: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" },
     { title: "Water Sports", img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e" },
     { title: "Snow Adventure", img: "https://images.unsplash.com/photo-1482192596544-9eb780fc7f66" },
-    { title: "Jungle & Safari", img: "https://images.unsplash.com/photo-1543248939-4296e1fea89b" },
+    { title: "Jungle & Safari", img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e" },
     { title: "Trekking", img: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" },
     { title: "Water Sports", img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e" },
     { title: "Snow Adventure", img: "https://images.unsplash.com/photo-1482192596544-9eb780fc7f66" },
@@ -35,17 +36,12 @@ export default function AdventureTypeSlider() {
                         className="flex gap-6 overflow-x-auto scroll-smooth no-scrollbar snap-x snap-mandatory"
                     >
                         {items.map((item, i) => (
-                            <div
+                            <AdventureCard
                                 key={i}
-                                className="adventure-card  w-full  sm:w-1/2  md:w-1/3 lg:w-1/4 snap-start" >
-                                <img
-                                    src={item.img}
-                                    className="w-full h-full object-cover"
-                                    alt={item.title}
-                                />
-                                <div className="adventure-overlay"></div>
-                                <span className="adventure-title">{item.title}</span>
-                            </div>
+                                title={item.title}
+                                img={item.img}
+                                className="max-w-[23.2%] sm:w-1/2 md:w-1/3 lg:w-1/4 snap-start"
+                            />
                         ))}
                     </div>
 
