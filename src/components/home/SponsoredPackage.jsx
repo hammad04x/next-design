@@ -2,6 +2,7 @@
 import { useState, useRef, useEffect } from "react";
 import Button from "@/components/ui/Button";
 import TicketPackageCard from "@/components/ui/TicketPackageCard";
+import SliderArrows from "../ui/SlideArrows";
 
 
 /* EXACT ticket cut geometry */
@@ -125,36 +126,23 @@ export default function SponsoredPackage() {
     useEffect(() => { check(); }, []);
 
     return (
-        <section className="py-16 px-13 sm:px-13 lg:px-13 ">
+        <section className="py-16 px-6 sm:px-13 lg:px-13 ">
             <TicketClipDef />
 
-            <div className="max-w-[7xl]  mx-auto bg-white rounded-[28px] p-8 lg:p-12"
+            <div className="max-w-[7xl]  mx-auto bg-white rounded-[28px] p-8 lg:p-7"
                 style={{ boxShadow: '0 10px 40px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.04)' }}>
 
                 {/* Header */}
                 <div className="flex justify-between items-center mb-10">
                     <h2 className="text-3xl font-bold text-[#0f172a] leading-none">Sponsored Packages</h2>
                     <div className="flex gap-3">
-                        <button
-                            onClick={() => move("left")}
-                            disabled={!canLeft}
-                            className={`w-12 h-12 rounded-full flex items-center justify-center text-xl transition-all ${canLeft
-                                ? "bg-[#2fa4ff] text-white shadow-md hover:bg-[#1c84e3]"
-                                : "bg-gray-200 text-gray-400 cursor-not-allowed"
-                                }`}
-                        >
-                            ‹
-                        </button>
-                        <button
-                            onClick={() => move("right")}
-                            disabled={!canRight}
-                            className={`w-12 h-12 rounded-full flex items-center justify-center text-xl transition-all ${canRight
-                                ? "bg-[#2fa4ff] text-white shadow-md hover:bg-[#1c84e3]"
-                                : "bg-gray-200 text-gray-400 cursor-not-allowed"
-                                }`}
-                        >
-                            ›
-                        </button>
+                        <SliderArrows
+  onPrev={() => move("left")}
+  onNext={() => move("right")}
+  disabledPrev={!canLeft}
+  disabledNext={!canRight}
+/>
+
                     </div>
                 </div>
 

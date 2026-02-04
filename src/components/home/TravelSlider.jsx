@@ -120,22 +120,24 @@ function Card({ data }) {
           />
 
           {/* MINI SLIDER DESIGN */}
-          <div className="absolute bottom-3 right-5 w-[170px] bg-black rounded-[1.5rem] shadow-2xl p-1.5">
+          <div className="absolute bottom-4 right-2 w-[160px] bg-black rounded-[1.5rem] shadow-2xl p-1.5">
             <img
               src={data.slides[miniIndex].img}
-              className="w-full h-[80px] object-cover rounded-[1.2rem]"
+              className="w-full h-[71px] object-cover rounded-[1.2rem]"
               alt="mini"
             />
 
-            <div className="relative flex flex-col px-2 py-2 text-white">
+            <div className="relative flex flex-col px-1 py-1 text-white">
               <p className="text-[11px] font-bold leading-tight truncate pr-6">
+                <span className="text-[11px]">
                 {data.slides[miniIndex].title}
+                </span>
               </p>
-              <p className="text-[9px] text-gray-400 mt-0.5">
-                {data.slides[miniIndex].desc}
+              <p className=" text-gray-400">
+               <span className="text-[9px]"> {data.slides[miniIndex].desc}</span>
               </p>
 
-              <div className="absolute -right-1 -bottom-1 rounded-tl-[2rem] p-1">
+              <div className="absolute right-[-7px] -bottom-1 rounded-tl-[2rem] p-1">
                 <button
                   onClick={nextMini}
                   className="w-8 h-8 bg-white text-black rounded-full shadow-lg flex items-center justify-center hover:bg-gray-100 transition-all"
@@ -164,8 +166,10 @@ function Card({ data }) {
             </div>
           </div>
 
-          <h3 className="text-[15px] font-bold text-gray-900 mt-6">
+          <h3 className=" font-bold text-gray-900 mt-6">
+            <span className="text-[18px]">
             {data.name}
+            </span>
           </h3>
         </div>
 
