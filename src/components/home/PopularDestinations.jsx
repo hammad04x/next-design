@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import Image from "next/image";
+import SliderArrows from "@/components/ui/SlideArrows";
 
 export default function PopularDestinations() {
   const sliderRef = useRef(null);
@@ -53,8 +54,8 @@ export default function PopularDestinations() {
   };
 
   return (
-    <section className="w-full py-16 px-4 sm:px-8 bg-gradient-to-b from-sky-50 to-white">
-      <div className="max-w-7xl mx-auto bg-white/80 rounded-3xl shadow-xl p-6 sm:p-8">
+    <section className="w-full py-16 px-4 sm:px-13">
+      <div className="max-w-7xl mx-auto bg-white/80 rounded-3xl shadow-xl p-5">
 
         {/* Header */}
         <div className="flex items-center justify-between mb-6">
@@ -62,20 +63,7 @@ export default function PopularDestinations() {
             Popular Adventure Destinations
           </h2>
 
-          <div className="flex gap-2">
-            <button
-              onClick={scrollLeft}
-              className="w-9 h-9 rounded-full bg-sky-500 text-white hover:bg-sky-600 transition"
-            >
-              ‹
-            </button>
-            <button
-              onClick={scrollRight}
-              className="w-9 h-9 rounded-full bg-sky-500 text-white hover:bg-sky-600 transition"
-            >
-              ›
-            </button>
-          </div>
+          <SliderArrows onPrev={scrollLeft} onNext={scrollRight} />
         </div>
 
         {/* Slider */}
@@ -86,33 +74,38 @@ export default function PopularDestinations() {
           {destinations.map((d, i) => (
             <div
               key={i}
-              className="slide-card snap-start min-w-[240px] sm:min-w-[280px] md:min-w-[300px] lg:min-w-[320px]
-                         relative rounded-2xl overflow-hidden shadow-lg flex-shrink-0"
+              className="slide-card snap-start min-w-[300px]
+              relative rounded-[28px] overflow-hidden flex-shrink-0 group"
             >
-              <div className="relative w-full h-64">
+              {/* Image */}
+              <div className="relative w-full h-[400px]">
                 <Image
                   src={d.img}
                   alt={d.name}
                   fill
-                  className="object-cover"
-                  sizes="(max-width: 640px) 240px, (max-width: 1024px) 300px, 320px"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  sizes="(max-width: 640px) 260px, (max-width: 1024px) 320px, 340px"
                   priority={i === 0}
                 />
               </div>
 
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+              {/* Fade */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
 
-              {/* Text */}
-              <div className="absolute bottom-4 left-4 right-4 text-white">
-                <h3 className="text-lg sm:text-xl font-bold">{d.name}</h3>
-                <p className="text-sm opacity-90">
-                  Starting from <span className="font-semibold">{d.price}</span>
-                </p>
+              {/* Bottom bar */}
+              <div className="absolute bottom-0 left-0 right-0 px-4 py-3 bg-white/25 backdrop-blur-sm text-white">
+                <h3 className="text-2xl font-bold">{d.name}</h3>
 
-                <button className="mt-2 inline-flex items-center gap-2 bg-white text-gray-900 text-xs font-semibold px-3 py-1.5 rounded-full hover:bg-gray-100 transition">
-                  Explore Now →
-                </button>
+                <div className="flex items-center justify-between mt-1">
+                  <p className="text-sm">
+                    Starting from{" "}
+                    <span className="text-lg font-medium">{d.price}</span>
+                  </p>
+
+                  <button className="inline-flex items-center gap-1 bg-white text-gray-900 text-xs font-semibold px-3 py-1.5 rounded-full shadow hover:bg-gray-100 transition">
+                    Explore Now →
+                  </button>
+                </div>
               </div>
             </div>
           ))}

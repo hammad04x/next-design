@@ -1,3 +1,4 @@
+/* @import "../assets/styles/common/button.css";
 @import "tailwindcss";
 @import "../assets/styles/home/topPackages.css";
 @import "../assets/styles/common/button.css";
@@ -7,63 +8,51 @@
 
 
   :root {
-    /* Brand */
     --primary: #2fa4ff;
     --primary-dark: #1c84e3;
     --primary-soft: #e9f5ff;
 
-    /* Backgrounds */
     --bg-main: #f3f9ff;
     --bg-section: #ffffff;
     --bg-glass: rgba(255, 255, 255, 0.65);
     --bg-footer: #eaf4ff;
 
-    /* Text */
     --text-main: #0f172a;
     --text-muted: #64748b;
     --text-light: #ffffff;
 
-    /* Borders & lines */
     --border-soft: #dbeafe;
     --border-light: #e5e7eb;
 
-    /* Shadows */
     --shadow-sm: 0 2px 6px rgba(0,0,0,0.06);
     --shadow-md: 0 8px 24px rgba(0,0,0,0.12);
     --shadow-glass: 0 10px 40px rgba(0,0,0,0.15);
 
-    /* Radius */
     --radius-sm: 8px;
     --radius-md: 14px;
     --radius-lg: 20px;
   }
 :root {
-  /* Brand */
   --primary: #2fa4ff;
   --primary-dark: #1c84e3;
   --primary-soft: #e9f5ff;
 
-  /* Backgrounds */
   --bg-main: #f3f9ff;
   --bg-section: #ffffff;
   --bg-glass: rgba(255, 255, 255, 0.65);
   --bg-footer: #eaf4ff;
 
-  /* Text */
   --text-main: #0f172a;
   --text-muted: #64748b;
   --text-light: #ffffff;
 
-  /* Borders & lines */
   --border-soft: #dbeafe;
   --border-light: #e5e7eb;
 
-  /* Shadows */
   --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.06);
   --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.12);
   --shadow-glass: 0 10px 40px rgba(0, 0, 0, 0.15);
 
-  /* Radius */
   --radius-sm: 8px;
   --radius-md: 14px;
   --radius-lg: 20px;
@@ -89,4 +78,149 @@ body {
 
 .hide-scrollbar::-webkit-scrollbar { display: none; }
 .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+ */
 
+
+
+
+@import "tailwindcss";
+@import "../assets/styles/common/button.css";
+@import "../assets/styles/layout/navbar.css";
+@import "../assets/styles/home/adventureTypeSlider.css";
+@import "../assets/styles/home/topPackages.css";
+
+/* =========================
+   DESIGN TOKENS
+========================= */
+:root {
+  /* Brand */
+  --primary: #2fa4ff;
+  --primary-dark: #1c84e3;
+  --primary-soft: #e9f5ff;
+
+  /* Backgrounds */
+  --bg-main: #f3f9ff;
+  --bg-section: #ffffff;
+  --bg-glass: rgba(255, 255, 255, 0.65);
+  --bg-footer: #eaf4ff;
+
+  /* Text */
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --text-light: #ffffff;
+
+  /* Borders */
+  --border-soft: #dbeafe;
+  --border-light: #e5e7eb;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 6px rgba(0,0,0,0.06);
+  --shadow-md: 0 8px 24px rgba(0,0,0,0.12);
+  --shadow-glass: 0 10px 40px rgba(0,0,0,0.15);
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+
+  /* Typography scale */
+  --h1: clamp(2.2rem, 5vw, 3.5rem);
+  --h2: clamp(1.8rem, 4vw, 2.5rem);
+  --h3: clamp(1.4rem, 3vw, 1.75rem);
+  --h4: 1.125rem;
+  --p: 0.85rem;
+  --small: 0.8rem;
+}
+
+/* =========================
+   BASE RESET
+========================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", Arial, sans-serif;
+  color: var(--text-main);
+  line-height: 1.6;
+  background: linear-gradient(
+    145deg,
+    #e7f3ff 0%,
+    #c7c8a5 25%,
+    #75a1c5 45%,
+    #fff3e8 70%,
+    #708fb2 100%
+  );
+}
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+h1 {
+  font-size: var(--h1);
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: var(--h2);
+  font-weight: 700;
+}
+
+h3 {
+  font-size: var(--h3);
+  font-weight: 700;
+}
+
+h4 {
+  font-size: var(--h4);
+  font-weight: 600;
+}
+
+p {
+  font-size: var(--p);
+}
+
+small {
+  font-size: var(--small);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.glass {
+  background: var(--bg-glass);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--border-soft);
+  box-shadow: var(--shadow-glass);
+  border-radius: var(--radius-lg);
+}
+
+/* Hide scrollbars */
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Center container */
+.container {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

@@ -125,7 +125,7 @@ export default function SponsoredPackage() {
     useEffect(() => { check(); }, []);
 
     return (
-        <section className="py-16 px-4 sm:px-6 lg:px-8" style={{ background: 'linear-gradient(to bottom, #eef6ff 0%, #ffffff 100%)' }}>
+        <section className="py-16 px-13 sm:px-13 lg:px-13 ">
             <TicketClipDef />
 
             <div className="max-w-[1400px] mx-auto bg-white rounded-[28px] p-8 lg:p-12"
@@ -172,9 +172,9 @@ export default function SponsoredPackage() {
                 </div>
 
                 <div className="flex justify-end mt-8">
-                    <button className="bg-[#2fa4ff] hover:bg-[#1c84e3] text-white text-[15px] font-semibold px-8 py-3 rounded-xl transition-colors shadow-md">
-                        View more
-                    </button>
+                   <Button variant="primary">
+                               View More
+                             </Button>
                 </div>
             </div>
         </section>

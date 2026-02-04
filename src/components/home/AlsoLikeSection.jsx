@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import Image from "next/image";
 import { IoCheckmarkCircleOutline } from "react-icons/io5";
+import SliderArrows from "@/components/ui/SlideArrows";
 
 export default function AlsoLikeSection() {
   const sliderRef = useRef(null);
@@ -54,7 +55,7 @@ export default function AlsoLikeSection() {
   };
 
   return (
-    <section className="w-full bg-gradient-to-b from-white to-sky-50 py-16 px-4 sm:px-8">
+    <section className="w-full py-16 px-4 sm:px-13">
       <div className="max-w-7xl mx-auto space-y-14">
 
         {/* HOW IT WORKS */}
@@ -96,20 +97,7 @@ export default function AlsoLikeSection() {
               You may also like
             </h3>
 
-            <div className="flex gap-2">
-              <button
-                onClick={scrollLeft}
-                className="w-9 h-9 rounded-full bg-sky-500 text-white hover:bg-sky-600 transition"
-              >
-                ‹
-              </button>
-              <button
-                onClick={scrollRight}
-                className="w-9 h-9 rounded-full bg-sky-500 text-white hover:bg-sky-600 transition"
-              >
-                ›
-              </button>
-            </div>
+            <SliderArrows onPrev={scrollLeft} onNext={scrollRight} />
           </div>
 
           {/* Slider */}
@@ -121,7 +109,7 @@ export default function AlsoLikeSection() {
               <div
                 key={i}
                 className="slide-card snap-start min-w-[260px] sm:min-w-[300px] md:min-w-[340px] lg:min-w-[360px]
-                           relative group rounded-2xl overflow-hidden shadow-lg cursor-pointer flex-shrink-0"
+                relative group rounded-2xl overflow-hidden shadow-lg cursor-pointer flex-shrink-0"
               >
                 <div className="relative w-full h-56 sm:h-64">
                   <Image

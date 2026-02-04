@@ -1,7 +1,10 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
 import Button from "@/components/ui/Button";
+import Image from "next/image";
+import SliderArrows from "../ui/SlideArrows";
 import TicketPackageCard from "@/components/ui/TicketPackageCard";
+
 
 
 /* EXACT ticket cut geometry */
@@ -28,14 +31,20 @@ function TicketClipDef() {
           <path
             d={[
               `M 0 0 L ${W} 0`,
-              ...smallTop.map(y => make(y, smallR, "right")),
-              ...bigMid.map(y => make(y, bigR, "right")),
-              ...smallBot.map(y => make(y, smallR, "right")),
+              ...smallTop.map((y) => make(y, smallR, "right")),
+              ...bigMid.map((y) => make(y, bigR, "right")),
+              ...smallBot.map((y) => make(y, smallR, "right")),
               `L ${W} ${H} L 0 ${H}`,
-              ...smallBot.slice().reverse().map(y => make(y, smallR, "left")),
-              ...bigMid.map(y => make(y, bigR, "left")),
-              ...smallTop.slice().reverse().map(y => make(y, smallR, "left")),
-              "Z"
+              ...smallBot
+                .slice()
+                .reverse()
+                .map((y) => make(y, smallR, "left")),
+              ...bigMid.map((y) => make(y, bigR, "left")),
+              ...smallTop
+                .slice()
+                .reverse()
+                .map((y) => make(y, smallR, "left")),
+              "Z",
             ].join(" ")}
           />
         </clipPath>
@@ -43,8 +52,6 @@ function TicketClipDef() {
     </svg>
   );
 }
-
-
 
 export default function TopPackages() {
   const scrollRef = useRef(null);
@@ -59,7 +66,12 @@ export default function TopPackages() {
       nights: "4N",
       days: "5D",
       location: "4N Goa",
-      features: ["Round Trip Flights", "Airport Transfers", "4 Star Hotel", "Selected Meals"],
+      features: [
+        "Round Trip Flights",
+        "Airport Transfers",
+        "4 Star Hotel",
+        "Selected Meals",
+      ],
       price: "10,258",
       originalPrice: "12,050",
       discount: "11% Off",
@@ -67,12 +79,18 @@ export default function TopPackages() {
     },
     {
       id: 2,
-      image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800",
+      image:
+        "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800",
       title: "Paris Group Tour Summer 2026",
       nights: "4N",
       days: "5D",
       location: "4N Goa",
-      features: ["Round Trip Flights", "Airport Transfers", "4 Star Hotel", "Selected Meals"],
+      features: [
+        "Round Trip Flights",
+        "Airport Transfers",
+        "4 Star Hotel",
+        "Selected Meals",
+      ],
       price: "10,258",
       originalPrice: "12,050",
       discount: "11% Off",
@@ -80,12 +98,18 @@ export default function TopPackages() {
     },
     {
       id: 3,
-      image: "https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=800",
+      image:
+        "https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=800",
       title: "Paris Group Tour Summer 2026",
       nights: "4N",
       days: "5D",
       location: "4N Goa",
-      features: ["Round Trip Flights", "Airport Transfers", "4 Star Hotel", "Selected Meals"],
+      features: [
+        "Round Trip Flights",
+        "Airport Transfers",
+        "4 Star Hotel",
+        "Selected Meals",
+      ],
       price: "10,258",
       originalPrice: "12,050",
       discount: "11% Off",
@@ -93,12 +117,18 @@ export default function TopPackages() {
     },
     {
       id: 4,
-      image: "https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=800",
+      image:
+        "https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=800",
       title: "Paris Group Tour Summer 2026",
       nights: "4N",
       days: "5D",
       location: "4N Goa",
-      features: ["Round Trip Flights", "Airport Transfers", "4 Star Hotel", "Selected Meals"],
+      features: [
+        "Round Trip Flights",
+        "Airport Transfers",
+        "4 Star Hotel",
+        "Selected Meals",
+      ],
       price: "10,258",
       originalPrice: "12,050",
       discount: "11% Off",
@@ -122,40 +152,31 @@ export default function TopPackages() {
     setTimeout(check, 300);
   };
 
-  useEffect(() => { check(); }, []);
+  useEffect(() => {
+    check();
+  }, []);
 
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8" style={{ background: 'linear-gradient(to bottom, #eef6ff 0%, #ffffff 100%)' }}>
+    <section className="py-16 px-6 sm:px-13 lg:px-13">
       <TicketClipDef />
 
-      <div className="max-w-[1400px] mx-auto bg-white rounded-[28px] p-8 lg:p-12"
-        style={{ boxShadow: '0 10px 40px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.04)' }}>
-
+      <div
+        className="max-w-[1400px] mx-auto bg-white rounded-[28px] p-2 lg:p-8"
+        style={{
+          boxShadow: "0 10px 40px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.04)",
+        }}
+      >
         {/* Header */}
         <div className="flex justify-between items-center mb-10">
-          <h2 className="text-3xl font-bold text-[#0f172a] leading-none">Top Packages</h2>
-          <div className="flex gap-3">
-            <button
-              onClick={() => move("left")}
-              disabled={!canLeft}
-              className={`w-12 h-12 rounded-full flex items-center justify-center text-xl transition-all ${canLeft
-                ? "bg-[#2fa4ff] text-white shadow-md hover:bg-[#1c84e3]"
-                : "bg-gray-200 text-gray-400 cursor-not-allowed"
-                }`}
-            >
-              ‹
-            </button>
-            <button
-              onClick={() => move("right")}
-              disabled={!canRight}
-              className={`w-12 h-12 rounded-full flex items-center justify-center text-xl transition-all ${canRight
-                ? "bg-[#2fa4ff] text-white shadow-md hover:bg-[#1c84e3]"
-                : "bg-gray-200 text-gray-400 cursor-not-allowed"
-                }`}
-            >
-              ›
-            </button>
-          </div>
+          <h2 className="text-[44px] font-bold text-[#0f172a] leading-none">
+            Top Packages
+          </h2>
+          <SliderArrows
+            onPrev={() => move("left")}
+            onNext={() => move("right")}
+            disabledPrev={!canLeft}
+            disabledNext={!canRight}
+          />
         </div>
 
         {/* Slider */}
@@ -170,10 +191,10 @@ export default function TopPackages() {
 
         </div>
 
-        <div className="flex justify-end mt-8">
-          <button className="bg-[#2fa4ff] hover:bg-[#1c84e3] text-white text-[15px] font-semibold px-8 py-3 rounded-xl transition-colors shadow-md">
-            View more
-          </button>
+        <div className="flex justify-end mt-2">
+          <Button variant="primary">
+            View More
+          </Button>
         </div>
       </div>
     </section>
