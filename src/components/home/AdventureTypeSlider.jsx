@@ -38,7 +38,7 @@ export default function AdventureTypeSlider() {
                             <div
                                 key={i}
                                 className="adventure-card  w-full  sm:w-1/2  md:w-1/3 lg:w-1/4 snap-start" >
-                                <img
+                                <image
                                     src={item.img}
                                     className="w-full h-full object-cover"
                                     alt={item.title}
