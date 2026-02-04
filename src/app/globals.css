@@ -1,9 +1,10 @@
 /* @import "../assets/styles/common/button.css";
-@import "../assets/styles/layout/navbar.css";
 @import "tailwindcss";
+@import "../assets/styles/home/topPackages.css";
+@import "../assets/styles/common/button.css";
+@import "../assets/styles/layout/navbar.css";
 @import "../assets/styles/common/button.css";
 @import "../assets/styles/home/adventureTypeSlider.css";
-@import "../assets/styles/home/topPackages.css";
 
 
   :root {
@@ -82,7 +83,7 @@ body {
 
 
 
- @import "tailwindcss";
+@import "tailwindcss";
 @import "../assets/styles/common/button.css";
 @import "../assets/styles/layout/navbar.css";
 @import "../assets/styles/home/adventureTypeSlider.css";
@@ -148,8 +149,15 @@ body {
   margin: 0;
   font-family: "Inter", Arial, sans-serif;
   color: var(--text-main);
-  background: linear-gradient(135deg, #f3f9ff, #ffffff);
   line-height: 1.6;
+  background: linear-gradient(
+    145deg,
+    #e7f3ff 0%,
+    #c7c8a5 25%,
+    #75a1c5 45%,
+    #fff3e8 70%,
+    #708fb2 100%
+  );
 }
 
 /* =========================
@@ -178,12 +186,10 @@ h4 {
 
 p {
   font-size: var(--p);
-  color: var(--text-light);
 }
 
 small {
   font-size: var(--small);
-  color: var(--text-muted);
 }
 
 a {

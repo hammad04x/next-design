@@ -1,35 +1,47 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
 import Button from "@/components/ui/Button";
+import Image from "next/image";
+import SliderArrows from "../ui/SlideArrows";
 
-/* SVG scallop clip-path */
+/* EXACT ticket cut geometry */
 function TicketClipDef() {
-  const W = 440, H = 320, R = 10;
-  const ys = [H * 0.18, H * 0.36, H * 0.54, H * 0.72];
+  const W = 376; // EXACT card width
+  const H = 320; // EXACT ticket body height
+
+  const smallTop = [20, 52, 82];
+  const bigMid = [127];
+  const smallBot = [182, 215, 245];
+
+  const smallR = 11;
+  const bigR = 22;
+
+  const make = (y, r, side) =>
+    side === "right"
+      ? `L ${W} ${y - r} A ${r} ${r} 0 0 0 ${W} ${y + r}`
+      : `L 0 ${y + r} A ${r} ${r} 0 0 0 0 ${y - r}`;
 
   return (
     <svg width="0" height="0" style={{ position: "absolute" }}>
       <defs>
-        <clipPath id="ticket-scallop" clipPathUnits="objectBoundingBox">
+        <clipPath id="ticket-scallop" clipPathUnits="userSpaceOnUse">
           <path
             d={[
-              "M 0 0 L 1 0",
-              ...ys.map(y => {
-                const y1 = (y - R) / H;
-                const y2 = (y + R) / H;
-                const rx = R / W;
-                const ry = R / H;
-                return `L 1 ${y1} A ${rx} ${ry} 0 0 0 1 ${y2}`;
-              }),
-              "L 1 1 L 0 1",
-              ...ys.reverse().map(y => {
-                const y1 = (y + R) / H;
-                const y2 = (y - R) / H;
-                const rx = R / W;
-                const ry = R / H;
-                return `L 0 ${y1} A ${rx} ${ry} 0 0 0 0 ${y2}`;
-              }),
-              "Z"
+              `M 0 0 L ${W} 0`,
+              ...smallTop.map((y) => make(y, smallR, "right")),
+              ...bigMid.map((y) => make(y, bigR, "right")),
+              ...smallBot.map((y) => make(y, smallR, "right")),
+              `L ${W} ${H} L 0 ${H}`,
+              ...smallBot
+                .slice()
+                .reverse()
+                .map((y) => make(y, smallR, "left")),
+              ...bigMid.map((y) => make(y, bigR, "left")),
+              ...smallTop
+                .slice()
+                .reverse()
+                .map((y) => make(y, smallR, "left")),
+              "Z",
             ].join(" ")}
           />
         </clipPath>
@@ -51,7 +63,12 @@ export default function TopPackages() {
       nights: "4N",
       days: "5D",
       location: "4N Goa",
-      features: ["Round Trip Flights","Airport Transfers","4 Star Hotel","Selected Meals"],
+      features: [
+        "Round Trip Flights",
+        "Airport Transfers",
+        "4 Star Hotel",
+        "Selected Meals",
+      ],
       price: "10,258",
       originalPrice: "12,050",
       discount: "11% Off",
@@ -59,12 +76,18 @@ export default function TopPackages() {
     },
     {
       id: 2,
-      image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800",
+      image:
+        "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800",
       title: "Paris Group Tour Summer 2026",
       nights: "4N",
       days: "5D",
       location: "4N Goa",
-      features: ["Round Trip Flights","Airport Transfers","4 Star Hotel","Selected Meals"],
+      features: [
+        "Round Trip Flights",
+        "Airport Transfers",
+        "4 Star Hotel",
+        "Selected Meals",
+      ],
       price: "10,258",
       originalPrice: "12,050",
       discount: "11% Off",
@@ -72,12 +95,18 @@ export default function TopPackages() {
     },
     {
       id: 3,
-      image: "https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=800",
+      image:
+        "https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=800",
       title: "Paris Group Tour Summer 2026",
       nights: "4N",
       days: "5D",
       location: "4N Goa",
-      features: ["Round Trip Flights","Airport Transfers","4 Star Hotel","Selected Meals"],
+      features: [
+        "Round Trip Flights",
+        "Airport Transfers",
+        "4 Star Hotel",
+        "Selected Meals",
+      ],
       price: "10,258",
       originalPrice: "12,050",
       discount: "11% Off",
@@ -85,38 +114,18 @@ export default function TopPackages() {
     },
     {
       id: 4,
-      image: "https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=800",
+      image:
+        "https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=800",
       title: "Paris Group Tour Summer 2026",
       nights: "4N",
       days: "5D",
       location: "4N Goa",
-      features: ["Round Trip Flights","Airport Transfers","4 Star Hotel","Selected Meals"],
-      price: "10,258",
-      originalPrice: "12,050",
-      discount: "11% Off",
-      note: "This price is lower than the average price in January",
-    },
-    {
-      id: 4,
-      image: "https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=800",
-      title: "Paris Group Tour Summer 2026",
-      nights: "4N",
-      days: "5D",
-      location: "4N Goa",
-      features: ["Round Trip Flights","Airport Transfers","4 Star Hotel","Selected Meals"],
-      price: "10,258",
-      originalPrice: "12,050",
-      discount: "11% Off",
-      note: "This price is lower than the average price in January",
-    },
-    {
-      id: 4,
-      image: "https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=800",
-      title: "Paris Group Tour Summer 2026",
-      nights: "4N",
-      days: "5D",
-      location: "4N Goa",
-      features: ["Round Trip Flights","Airport Transfers","4 Star Hotel","Selected Meals"],
+      features: [
+        "Round Trip Flights",
+        "Airport Transfers",
+        "4 Star Hotel",
+        "Selected Meals",
+      ],
       price: "10,258",
       originalPrice: "12,050",
       discount: "11% Off",
@@ -134,86 +143,128 @@ export default function TopPackages() {
   const move = (dir) => {
     const el = scrollRef.current;
     el.scrollBy({
-      left: dir === "left"
-        ? -el.clientWidth / 1.1
-        : el.clientWidth / 1.1,
+      left: dir === "left" ? -el.clientWidth / 1.1 : el.clientWidth / 1.1,
       behavior: "smooth",
     });
     setTimeout(check, 300);
   };
 
-  useEffect(() => { check(); }, []);
+  useEffect(() => {
+    check();
+  }, []);
 
   return (
-    <section className="py-12 px-6 bg-gradient-to-b from-[#eef6ff] to-white">
+    <section className="py-16 px-2 sm:px-13 lg:px-13">
       <TicketClipDef />
 
-      <div className="max-w-7xl mx-auto bg-white rounded-[28px] shadow-2xl p-8">
-
+      <div
+        className="max-w-[1400px] mx-auto bg-white rounded-[28px] p-2 lg:p-8"
+        style={{
+          boxShadow: "0 10px 40px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.04)",
+        }}
+      >
         {/* Header */}
         <div className="flex justify-between items-center mb-10">
-          <h2 className="text-[40px] font-bold">Top Packages</h2>
-          <div className="flex gap-3">
-            <button onClick={() => move("left")} disabled={!canLeft}
-              className={`w-11 h-11 rounded-full shadow-md ${
-                canLeft ? "bg-blue-500 text-white" : "bg-gray-200 text-gray-400"
-              }`}>‹</button>
-            <button onClick={() => move("right")} disabled={!canRight}
-              className={`w-11 h-11 rounded-full shadow-md ${
-                canRight ? "bg-blue-500 text-white" : "bg-gray-200 text-gray-400"
-              }`}>›</button>
-          </div>
+          <h2 className="text-[44px] font-bold text-[#0f172a] leading-none">
+            Top Packages
+          </h2>
+          <SliderArrows
+            onPrev={() => move("left")}
+            onNext={() => move("right")}
+            disabledPrev={!canLeft}
+            disabledNext={!canRight}
+          />
         </div>
 
         {/* Slider */}
-        <div ref={scrollRef} onScroll={check}
-          className="flex gap-6 overflow-x-auto no-scrollbar snap-x snap-mandatory">
-
+        <div
+          ref={scrollRef}
+          onScroll={check}
+          className="flex gap-8 overflow-x-auto no-scrollbar snap-x snap-mandatory pb-2"
+        >
           {packages.map((p) => (
-            <div key={p.id}
-              className="flex-shrink-0 snap-start
-                w-[85%] sm:w-[48%] lg:w-[23%]">
-
+            <div key={p.id} className="flex-shrink-0 snap-start w-[376px]">
               {/* IMAGE */}
-              <div className="relative h-[190px] rounded-t-[22px] overflow-hidden shadow-md">
-                <img src={p.image} className="w-full h-full object-cover" />
-                <span className="absolute top-4 right-4 bg-white px-3 py-1 rounded-full text-sm font-semibold border">
-                  {p.nights}/{p.days}
-                </span>
+              <div className="package-image-warapper relative h-[240px] rounded-[6px] overflow-hidden">
+                <Image
+                  src={p.image}
+                  alt={p.title}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 376px"
+                  priority={p.id === 1}
+                />
               </div>
 
-              {/* PAPER */}
+              {/* TICKET CARD */}
               <div className="ticket-shell">
-                <div className="ticket-body" style={{ clipPath: "url(#ticket-scallop)" }}>
-                  <div className="p-4">
-                    <h3 className="font-bold text-lg">{p.title}</h3>
-                    <p className="text-gray-500 text-sm mb-3">{p.location}</p>
+                <div
+                  className="ticket-body"
+                  style={{ clipPath: "url(#ticket-scallop)" }}
+                >
+                  <div className="px-[25px] py-[15px]">
+                    <div className="flex justify-between items-start mb-1">
+                      <h3 className="font-bold text-[17px] leading-tight mb-1 text-[#0f172a]">
+                        {p.title}
+                      </h3>
+                      <span className="border border-blue-400  text-[11px]  px-2 py-[1px] rounded">
+                        {p.nights}/{p.days}
+                      </span>
+                    </div>
+                    <p className="text-[#64748b] text-[13px] mb-2">
+                      {p.location}
+                    </p>
 
-                    <div className="grid grid-cols-2 gap-2 text-sm mb-3 pb-3 border-b border-dotted">
-                      {p.features.map((f,i)=><div key={i}>• {f}</div>)}
+                    <div className="border-t border-dashed border-gray-300 my-3" />
+
+                    <div className="grid grid-cols-2 gap-x-3 gap-y-2 text-[13px] mb-3 ml-2 text-[#0f172a]">
+                      {p.features.map((f, i) => (
+                        <div key={i} className="flex items-start gap-2">
+                          <span className="text-gray-400 text-[10px] mt-[3px]">
+                            ●
+                          </span>
+                          <span>{f}</span>
+                        </div>
+                      ))}
                     </div>
 
-                    <div className="bg-blue-50 text-blue-600 text-xs p-2 rounded mb-3">
-                      {p.note}
-                    </div>
+                    <div className="bg-[#e0f2fe] px-3 py-1 border border-blue-400 rounded-sm mb-4 flex items-center justify-between gap-3">
+                      <p className="text-black text-[11px] leading-tight flex-1 w-[50%]">
+                        {p.note}
+                      </p>
 
-                    <div className="flex justify-between items-end">
-                      <div>
-                        <div className="text-xl font-bold">₹{p.price}</div>
-                        <div className="text-xs text-green-600">{p.discount}</div>
+                      <div className="text-right flex-shrink-0 w-[50%]">
+                        <div className="font-bold text-[17px] text-[#0f172a]">
+                          ₹{p.price}{" "}
+                          <span className="font-normal text-[12px]">
+                            /Person
+                          </span>
+                        </div>
+                        <div className="flex items-center gap-2 justify-end">
+                          <span className="line-through text-[12px] text-[#94a3b8]">
+                            ₹{p.originalPrice}
+                          </span>
+                          <span className="text-[#16a34a] text-[12px] font-semibold">
+                            {p.discount}
+                          </span>
+                        </div>
                       </div>
-                      <Button variant="primary">Book</Button>
+                    </div>
+
+                    <div className="flex justify-end">
+                      <Button variant="secondry">Search</Button>
                     </div>
                   </div>
                 </div>
               </div>
-
             </div>
           ))}
         </div>
 
-        <div className="flex justify-end mt-6">
-          <Button variant="primary">View more</Button>
+        <div className="flex justify-end mt-2">
+          <Button variant="primary">
+            View More
+          </Button>
         </div>
       </div>
     </section>

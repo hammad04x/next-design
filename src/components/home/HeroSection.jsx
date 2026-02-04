@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Button from "../ui/Button";
 
 export default function HeroSection() {
   const [searchData, setSearchData] = useState({
@@ -18,7 +19,6 @@ export default function HeroSection() {
     <>
       {/* HERO */}
       <section className="relative z-20 w-full h-[45vh] min-h-[400px] flex items-center justify-center overflow-visible">
-        {/* Background */}
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
@@ -29,7 +29,6 @@ export default function HeroSection() {
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/20" />
         </div>
 
-        {/* Text */}
         <div className="relative z-10 flex flex-col items-center text-center max-w-5xl px-4">
           <h1 className="text-white font-serif drop-shadow-xl mb-4">
             ADVENTURE TRIPS IN INDIA
@@ -58,7 +57,6 @@ export default function HeroSection() {
               />
             </div>
 
-            {/* Type */}
             <div className="flex-1 flex flex-col text-left px-5 border-r border-gray-200">
               <label className="text-[10px] font-bold text-gray-900 uppercase mb-0.5">
                 Type of packages
@@ -111,25 +109,9 @@ export default function HeroSection() {
                 <option value="luxury">Luxury</option>
               </select>
             </div>
-
-            {/* Button */}
-            <button
-              onClick={handleSearch}
-              className="
-    ml-2
-    text-white font-bold text-sm
-    px-8 py-3.5 rounded-full
-    bg-gradient-to-r
-    from-[#00C6FF]
-    to-[#0072FF]
-    hover:from-[#00B2E6]
-    hover:to-[#005DE0]
-    transition-all duration-300
-    shadow-lg
-  "
-            >
-              Search
-            </button>
+            <Button variant="secondry">
+            Search
+          </Button>
           </div>
         </div>
       </section>
@@ -201,17 +183,9 @@ export default function HeroSection() {
               <option value="luxury">Luxury</option>
             </select>
           </div>
-
-          {/* Button */}
-          <button
-            onClick={handleSearch}
-            className="w-full text-white font-bold py-3.5 rounded-xl
-                 bg-gradient-to-r from-[#00C6FF] to-[#0072FF]
-                 hover:from-[#00B2E6] hover:to-[#005DE0]
-                 shadow-lg transition"
-          >
+          <Button variant="secondry">
             Search
-          </button>
+          </Button>
         </div>
       </div>
     </>

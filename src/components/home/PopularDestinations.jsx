@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import Image from "next/image";
+import SliderArrows from "@/components/ui/SlideArrows";
 
 export default function PopularDestinations() {
   const sliderRef = useRef(null);
@@ -53,28 +54,16 @@ export default function PopularDestinations() {
   };
 
   return (
-    <section className="w-full py-16 px-4 sm:px-13 ">
-      <div className="max-w-7xl mx-auto bg-white/80 rounded-3xl shadow-xl p-5 sm:p-5">
+    <section className="w-full py-16 px-4 sm:px-13">
+      <div className="max-w-7xl mx-auto bg-white/80 rounded-3xl shadow-xl p-5">
+
         {/* Header */}
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-gray-900">
             Popular Adventure Destinations
           </h2>
 
-          <div className="flex gap-2">
-            <button
-              onClick={scrollLeft}
-              className="w-9 h-9 rounded-full bg-sky-500 text-white hover:bg-sky-600 transition"
-            >
-              ‹
-            </button>
-            <button
-              onClick={scrollRight}
-              className="w-9 h-9 rounded-full bg-sky-500 text-white hover:bg-sky-600 transition"
-            >
-              ›
-            </button>
-          </div>
+          <SliderArrows onPrev={scrollLeft} onNext={scrollRight} />
         </div>
 
         {/* Slider */}
@@ -85,8 +74,8 @@ export default function PopularDestinations() {
           {destinations.map((d, i) => (
             <div
               key={i}
-              className="slide-card snap-start min-w-[300px] sm:min-w-[300px] md:min-w-[300px] lg:min-w-[300px]
-             relative rounded-[28px] overflow-hidden flex-shrink-0 group"
+              className="slide-card snap-start min-w-[300px]
+              relative rounded-[28px] overflow-hidden flex-shrink-0 group"
             >
               {/* Image */}
               <div className="relative w-full h-[400px]">
@@ -100,17 +89,17 @@ export default function PopularDestinations() {
                 />
               </div>
 
-              {/* Dark soft fade */}
+              {/* Fade */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
 
-              {/* Bottom frosted bar */}
+              {/* Bottom bar */}
               <div className="absolute bottom-0 left-0 right-0 px-4 py-3 bg-white/25 backdrop-blur-sm text-white">
                 <h3 className="text-2xl font-bold">{d.name}</h3>
 
                 <div className="flex items-center justify-between mt-1">
                   <p className="text-sm">
                     Starting from{" "}
-                    <span className="text-lg font-500">{d.price}</span>
+                    <span className="text-lg font-medium">{d.price}</span>
                   </p>
 
                   <button className="inline-flex items-center gap-1 bg-white text-gray-900 text-xs font-semibold px-3 py-1.5 rounded-full shadow hover:bg-gray-100 transition">
@@ -121,6 +110,7 @@ export default function PopularDestinations() {
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );
