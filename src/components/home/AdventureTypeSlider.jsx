@@ -2,7 +2,6 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import { useRef } from "react";
-import AdventureCard from "./AdventureCard";
 
 const items = [
   {
