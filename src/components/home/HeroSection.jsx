@@ -240,7 +240,8 @@ export default function HeroSection() {
       </section>
 
       {/* MOBILE SEARCH */}
-      <div className="md:hidden relative mt-6 mb-6 px-4">
+      <div className="container">
+      <div className=" md:hidden relative mt-6 mb-6">
         <div className="mx-auto max-w-sm bg-white/95 backdrop-blur-lg rounded-2xl p-5 shadow-2xl space-y-4">
           {/* Where */}
           <div className="relative" ref={destinationMobileRef}>
@@ -337,6 +338,7 @@ export default function HeroSection() {
             Search
           </Button>
         </div>
+      </div>
       </div>
     </>
   );

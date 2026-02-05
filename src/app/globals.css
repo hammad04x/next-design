@@ -62,7 +62,7 @@ html {
 
 body {
   margin: 0;
-  font-family: "Inter", Arial, sans-serif;
+  font-family: var(--font-inter), sans-serif;
   color: var(--text-main);
   line-height: 1.6;
   background: linear-gradient(

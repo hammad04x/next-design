@@ -129,8 +129,9 @@ export default function SponsoredPackage() {
               <SliderArrows
                 onPrev={() => move("left")}
                 onNext={() => move("right")}
-                disabledPrev={!canLeft}
-                disabledNext={!canRight}
+                
+            disabledPrev={!canLeft}
+            disabledNext={!canRight}
               />
             </div>
           </div>
