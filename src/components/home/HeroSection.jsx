@@ -136,7 +136,7 @@ export default function HeroSection() {
           </h4>
         </div>
 
-        <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 w-full px-4 z-50 hidden md:flex justify-center">
+        <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 w-full px-4 z-50 hidden md:flex justify-center md:w-[90%]">
           <div className="mx-auto max-w-5xl bg-white rounded-full shadow-2xl py-5 px-3 flex items-center">
             {/* Where */}
             <div className="flex-1 flex flex-col text-left px-5 border-r border-gray-200 relative" ref={destinationRef}>

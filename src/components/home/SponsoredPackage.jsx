@@ -122,7 +122,7 @@ export default function SponsoredPackage() {
         >
           {/* Header */}
           <div className="flex justify-between items-center mb-10">
-            <h2 className="text-3xl font-bold text-[#0f172a] leading-none">
+            <h2 className="text-2xl font-bold text-[#0f172a] leading-none">
               Sponsored Packages
             </h2>
             <div className="flex gap-3">
