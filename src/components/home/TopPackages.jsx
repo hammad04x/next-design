@@ -117,7 +117,7 @@ export default function TopPackages() {
     <section className="py-16">
 
       <div
-        className=" mx-auto bg-white rounded-[28px] p-2 lg:p-8"
+        className=" mx-auto bg-white rounded-[28px] p-6 lg:p-8"
         style={{
           boxShadow: "0 10px 40px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.04)",
         }}
