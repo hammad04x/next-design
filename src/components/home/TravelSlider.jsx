@@ -235,13 +235,13 @@ export default function TravelSlider() {
       <section className="py-10 sm:py-16">
         
         {/* RESPONSIVE HEADER FIX */}
-        <div className="flex flex-col sm:flex-row justify-between sm:items-center mb-6 sm:mb-8 gap-3">
+        <div className="flex justify-between items-center mb-10">
           
-          <h2 className="text-[18px] sm:text-2xl lg:text-3xl font-extrabold text-gray-900">
+          <h2 className="text-2xl font-bold text-[#0f172a] leading-none">
             Top Travel Agents on TravelX
           </h2>
 
-          <div className="self-end sm:self-auto">
+          <div className="flex gap-3">
             <SliderArrows onPrev={prev} onNext={next} />
           </div>
 
