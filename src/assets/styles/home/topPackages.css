@@ -47,6 +47,7 @@
 .swiper-wrapper {
   display: flex;
   transition-property: transform;
+  padding-bottom: 20px; 
 }
 
 .swiper-slide {

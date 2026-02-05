@@ -10,83 +10,83 @@ import { Swiper, SwiperSlide } from "swiper/react";
 export default function SponsoredPackage() {
   const [swiper, setSwiper] = useState(null);
 
-  const packages = [
-    {
-      id: 1,
-      image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800",
-      title: "Paris Group Tour Summer 2026",
-      nights: "4N",
-      days: "5D",
-      location: "4N Goa",
-      features: [
-        "Round Trip Flights",
-        "Airport Transfers",
-        "4 Star Hotel",
-        "Selected Meals",
-      ],
-      price: "10,258",
-      originalPrice: "12,050",
-      discount: "11% Off",
-      note: "This price is lower than the average price in January",
-    },
-    {
-      id: 2,
-      image:
-        "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800",
-      title: "Paris Group Tour Summer 2026",
-      nights: "4N",
-      days: "5D",
-      location: "4N Goa",
-      features: [
-        "Round Trip Flights",
-        "Airport Transfers",
-        "4 Star Hotel",
-        "Selected Meals",
-      ],
-      price: "10,258",
-      originalPrice: "12,050",
-      discount: "11% Off",
-      note: "This price is lower than the average price in January",
-    },
-    {
-      id: 3,
-      image:
-        "https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=800",
-      title: "Paris Group Tour Summer 2026",
-      nights: "4N",
-      days: "5D",
-      location: "4N Goa",
-      features: [
-        "Round Trip Flights",
-        "Airport Transfers",
-        "4 Star Hotel",
-        "Selected Meals",
-      ],
-      price: "10,258",
-      originalPrice: "12,050",
-      discount: "11% Off",
-      note: "This price is lower than the average price in January",
-    },
-    {
-      id: 4,
-      image:
-        "https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=800",
-      title: "Paris Group Tour Summer 2026",
-      nights: "4N",
-      days: "5D",
-      location: "4N Goa",
-      features: [
-        "Round Trip Flights",
-        "Airport Transfers",
-        "4 Star Hotel",
-        "Selected Meals",
-      ],
-      price: "10,258",
-      originalPrice: "12,050",
-      discount: "11% Off",
-      note: "This price is lower than the average price in January",
-    },
-  ];
+    const packages = [
+      {
+        id: 1,
+        image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800",
+        title: "Paris Group Tour Summer 2026",
+        nights: "4N",
+        days: "5D",
+        location: "4N Goa",
+        features: [
+          "Round Trip Flights",
+          "Airport Transfers",
+          "4 Star Hotel",
+          "Selected Meals",
+        ],
+        price: "10,258",
+        originalPrice: "12,050",
+        discount: "11% Off",
+        note: "This price is lower than the average price in January",
+      },
+      {
+        id: 2,
+        image:
+          "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800",
+        title: "Paris Group Tour Summer 2026",
+        nights: "4N",
+        days: "5D",
+        location: "4N Goa",
+        features: [
+          "Round Trip Flights",
+          "Airport Transfers",
+          "4 Star Hotel",
+          "Selected Meals",
+        ],
+        price: "10,258",
+        originalPrice: "12,050",
+        discount: "11% Off",
+        note: "This price is lower than the average price in January",
+      },
+      {
+        id: 3,
+        image:
+          "https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=800",
+        title: "Paris Group Tour Summer 2026",
+        nights: "4N",
+        days: "5D",
+        location: "4N Goa",
+        features: [
+          "Round Trip Flights",
+          "Airport Transfers",
+          "4 Star Hotel",
+          "Selected Meals",
+        ],
+        price: "10,258",
+        originalPrice: "12,050",
+        discount: "11% Off",
+        note: "This price is lower than the average price in January",
+      },
+      {
+        id: 4,
+        image:
+          "https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=800",
+        title: "Paris Group Tour Summer 2026",
+        nights: "4N",
+        days: "5D",
+        location: "4N Goa",
+        features: [
+          "Round Trip Flights",
+          "Airport Transfers",
+          "4 Star Hotel",
+          "Selected Meals",
+        ],
+        price: "10,258",
+        originalPrice: "12,050",
+        discount: "11% Off",
+        note: "This price is lower than the average price in January",
+      },
+    ];
 
   return (
     <div className="container">
