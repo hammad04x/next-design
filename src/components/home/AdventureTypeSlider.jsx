@@ -1,7 +1,10 @@
 "use client";
+
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
-import { useRef } from "react";
+import { useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 
 const items = [
   { title: "Trekking", img: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" },
@@ -15,15 +18,7 @@ const items = [
 ];
 
 export default function AdventureTypeSlider() {
-  const sliderRef = useRef(null);
-
-  const scrollLeft = () => {
-    sliderRef.current?.scrollBy({ left: -300, behavior: "smooth" });
-  };
-
-  const scrollRight = () => {
-    sliderRef.current?.scrollBy({ left: 300, behavior: "smooth" });
-  };
+  const [swiper, setSwiper] = useState(null);
 
   return (
     <div className="container">
@@ -34,51 +29,47 @@ export default function AdventureTypeSlider() {
               Explore Adventure by Type
             </h2>
 
-            {/* SLIDER */}
-            <div
-              ref={sliderRef}
-              className="
-                flex gap-6
-                overflow-x-auto scroll-smooth no-scrollbar
-                snap-x snap-mandatory
-                scroll-px-4 md:scroll-px-0
-              "
+            {/* SWIPER (Replacing scroll div only) */}
+            <Swiper
+              onSwiper={setSwiper}
+              spaceBetween={24}
+              slidesPerView={1.1}
+              breakpoints={{
+                640: { slidesPerView: 2 },
+                768: { slidesPerView: 2 },
+                1024: { slidesPerView: 4 },
+              }}
             >
               {items.map((item, i) => (
-                <div
-                  key={i}
-                  className="
-                    adventure-card
-                    snap-start
-                    relative overflow-hidden rounded-xl
-                    flex-shrink-0
+                <SwiperSlide key={i}>
+                  <div
+                    className="
+                      adventure-card
+                      relative overflow-hidden rounded-xl
+                      flex-shrink-0
+                    "
+                  >
+                    <div className="relative w-full h-[135px]">
+                      <Image
+                        src={item.img}
+                        alt={item.title}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 640px) 85vw, (max-width: 1024px) 33vw, 25vw"
+                        priority={i === 0}
+                      />
+                    </div>
 
-                    w-[89%]        /* mobile: ~1 card */
-                    sm:w-[48%]     /* mobile landscape: ~2 cards */
-                    md:w-[48%]       /* tablet: EXACTLY 3 cards */
-                    lg:w-[23%]       /* desktop: unchanged */
-                  "
-                >
-                  <div className="relative w-full h-[135px]">
-                    <Image
-                      src={item.img}
-                      alt={item.title}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 640px) 85vw, (max-width: 1024px) 33vw, 25vw"
-                      priority={i === 0}
-                    />
+                    <div className="adventure-overlay" />
+                    <span className="adventure-title">{item.title}</span>
                   </div>
-
-                  <div className="adventure-overlay" />
-                  <span className="adventure-title">{item.title}</span>
-                </div>
+                </SwiperSlide>
               ))}
-            </div>
+            </Swiper>
 
-            {/* ARROWS (all screens) */}
+            {/* ARROWS — EXACT SAME POSITION */}
             <button
-              onClick={scrollLeft}
+              onClick={() => swiper && swiper.slidePrev()}
               className="
                 absolute left-2 top-[62%] -translate-y-1/2
                 bg-black text-white shadow-md
@@ -89,7 +80,7 @@ export default function AdventureTypeSlider() {
             </button>
 
             <button
-              onClick={scrollRight}
+              onClick={() => swiper && swiper.slideNext()}
               className="
                 absolute right-2 top-[62%] -translate-y-1/2
                 bg-black text-white shadow-md
@@ -98,6 +89,7 @@ export default function AdventureTypeSlider() {
             >
               <ChevronRight />
             </button>
+
           </div>
         </div>
       </section>
