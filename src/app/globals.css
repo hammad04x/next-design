@@ -1,13 +1,13 @@
 
 @import "tailwindcss";
+@import "swiper/css";
 @import "../assets/styles/common/button.css";
 @import "../assets/styles/layout/navbar.css";
 @import "../assets/styles/home/adventureTypeSlider.css";
 @import "../assets/styles/home/topPackages.css";
 
-/* =========================
-   DESIGN TOKENS
-========================= */
+
+
 :root {
   /* Brand */
   --primary: #2fa4ff;
@@ -161,8 +161,4 @@ a {
   padding-right: 1rem;
 }
 
-.sub-container{
-  width: 92%;
-  margin: 0 auto;
-}
 

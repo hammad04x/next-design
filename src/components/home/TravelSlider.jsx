@@ -1,9 +1,11 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import SliderArrows from "../ui/SlideArrows";
 import Image from "next/image";
 import Button from "../ui/Button";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 
 const agentsData = [
   {
@@ -126,16 +128,15 @@ function Card({ data }) {
             />
 
             <div className="relative flex flex-col px-1 py-1 text-white">
-              <p className="text-[11px] font-bold leading-tight truncate pr-6">
+              <p className="text-[11px] font-bold truncate pr-6">
                 {data.slides[miniIndex].title}
               </p>
-              <p className="text-gray-400 text-[9px]  ">
-               
-                 {data.slides[miniIndex].desc}
-             
+
+              <p className="text-gray-400 text-[9px]">
+                {data.slides[miniIndex].desc}
               </p>
 
-              <div className="absolute right-[-7px] -bottom-1 rounded-tl-[2rem] p-1">
+              <div className="absolute right-[-7px] -bottom-1 p-1">
                 <button
                   onClick={nextMini}
                   className="w-8 h-8 bg-white text-black rounded-full shadow-lg flex items-center justify-center"
@@ -195,72 +196,42 @@ function Card({ data }) {
 }
 
 export default function TravelSlider() {
-  const [startIndex, setStartIndex] = useState(0);
-  const [cardsPerView, setCardsPerView] = useState(3);
-
-  useEffect(() => {
-    const updateView = () => {
-      if (window.innerWidth < 640) {
-        setCardsPerView(1);
-      } else if (window.innerWidth < 1024) {
-        setCardsPerView(2);
-      } else {
-        setCardsPerView(3);
-      }
-    };
-
-    updateView();
-    window.addEventListener("resize", updateView);
-
-    return () => window.removeEventListener("resize", updateView);
-  }, []);
-
-  const maxIndex = agentsData.length - cardsPerView;
-
-  const next = () => {
-    setStartIndex((p) => (p < maxIndex ? p + 1 : p));
-  };
-
-  const prev = () => {
-    setStartIndex((p) => (p > 0 ? p - 1 : p));
-  };
-
-  const currentItems = agentsData.slice(
-    startIndex,
-    startIndex + cardsPerView
-  );
+  const [swiper, setSwiper] = useState(null);
 
   return (
     <div className="container">
-      <section className="">
-        {/* Header */}
+      <section>
+        {/* HEADER SAME */}
         <div className="flex justify-between items-center mb-8">
           <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900">
             Top Travel Agents on TravelX
           </h2>
 
           <div className="flex gap-3">
-            <SliderArrows onPrev={prev} onNext={next} />
+            <SliderArrows
+              onPrev={() => swiper && swiper.slidePrev()}
+              onNext={() => swiper && swiper.slideNext()}
+            />
           </div>
-
         </div>
 
-        {/* REAL SLIDER (NO EXTRA CARDS BELOW) */}
-        <div className="overflow-hidden">
-          <div className="flex gap-6 transition-all duration-500 mb-[50px]">
-            {currentItems.map((agent, i) => (
-              <div
-                key={agent.id}
-                className={`
-                  min-w-full
-                  sm:min-w-[calc(100%/2-12px)]
-                  lg:min-w-[calc(100%/3-16px)]
-                `}
-              >
+        {/* SLIDER AREA SAME SPACING */}
+        <div className="overflow-hidden mb-[50px]">
+          <Swiper
+            onSwiper={setSwiper}
+            spaceBetween={24}
+            slidesPerView={1}
+            breakpoints={{
+              640: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
+            }}
+          >
+            {agentsData.map((agent) => (
+              <SwiperSlide key={agent.id}>
                 <Card data={agent} />
-              </div>
+              </SwiperSlide>
             ))}
-          </div>
+          </Swiper>
         </div>
 
       </section>

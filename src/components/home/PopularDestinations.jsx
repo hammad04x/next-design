@@ -1,11 +1,14 @@
 "use client";
 
-import { useRef } from "react";
+import { useState } from "react";
 import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
 import SliderArrows from "@/components/ui/SlideArrows";
+import "swiper/css";
 
 export default function PopularDestinations() {
-  const sliderRef = useRef(null);
+  const [swiper, setSwiper] = useState(null);
+
 
   const destinations = [
     {
@@ -35,27 +38,9 @@ export default function PopularDestinations() {
     },
   ];
 
-  const scrollLeft = () => {
-    const card = sliderRef.current.querySelector(".slide-card");
-    if (!card) return;
-    sliderRef.current.scrollBy({
-      left: -(card.offsetWidth + 24),
-      behavior: "smooth",
-    });
-  };
-
-  const scrollRight = () => {
-    const card = sliderRef.current.querySelector(".slide-card");
-    if (!card) return;
-    sliderRef.current.scrollBy({
-      left: card.offsetWidth + 24,
-      behavior: "smooth",
-    });
-  };
-
   return (
-    <section className=" container px-4 sm:px-13">
-      <div className=" mx-auto bg-white/80 rounded-3xl shadow-xl p-5">
+    <section className="container px-4 sm:px-13">
+      <div className="mx-auto bg-white/80 rounded-3xl shadow-xl p-5">
 
         {/* Header */}
         <div className="flex items-center justify-between mb-6">
@@ -63,53 +48,58 @@ export default function PopularDestinations() {
             Popular Adventure Destinations
           </h2>
 
-          <SliderArrows onPrev={scrollLeft} onNext={scrollRight} />
+          <SliderArrows
+            onPrev={() => swiper?.slidePrev()}
+            onNext={() => swiper?.slideNext()}
+          />
         </div>
 
-        {/* Slider */}
-        <div
-          ref={sliderRef}
-          className="flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory hide-scrollbar"
+        <Swiper
+          onSwiper={setSwiper}
+          spaceBetween={24}
+          slidesPerView={1.1}
+          breakpoints={{
+            640: { slidesPerView: 1.8 },
+            768: { slidesPerView: 2.2 },
+            1024: { slidesPerView: 2.8 },
+            1280: { slidesPerView: 3.2 },
+          }}
         >
           {destinations.map((d, i) => (
-            <div
-              key={i}
-              className="slide-card snap-start min-w-[300px]
-              relative rounded-[28px] overflow-hidden flex-shrink-0 group"
-            >
-              {/* Image */}
-              <div className="relative w-full h-[400px]">
-                <Image
-                  src={d.img}
-                  alt={d.name}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  sizes="(max-width: 640px) 260px, (max-width: 1024px) 320px, 340px"
-                  priority={i === 0}
-                />
-              </div>
+            <SwiperSlide key={i}>
+              <div className="slide-card relative rounded-[28px] overflow-hidden flex-shrink-0 group">
 
-              {/* Fade */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
-
-              {/* Bottom bar */}
-              <div className="absolute bottom-0 left-0 right-0 px-4 py-3 bg-white/25 backdrop-blur-sm text-white">
-                <h3 className="text-2xl font-bold">{d.name}</h3>
-
-                <div className="flex items-center justify-between mt-1">
-                  <p className="text-sm">
-                    Starting from{" "}
-                    <span className="text-lg font-medium">{d.price}</span>
-                  </p>
-
-                  <button className="inline-flex items-center gap-1 bg-white text-gray-900 text-xs font-semibold px-3 py-1.5 rounded-full shadow hover:bg-gray-100 transition">
-                    Explore Now →
-                  </button>
+                <div className="relative w-full h-[400px]">
+                  <Image
+                    src={d.img}
+                    alt={d.name}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    priority={i === 0}
+                  />
                 </div>
+
+                <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
+
+                <div className="absolute bottom-0 left-0 right-0 px-4 py-3 bg-white/25 backdrop-blur-sm text-white">
+                  <h3 className="text-2xl font-bold">{d.name}</h3>
+
+                  <div className="flex items-center justify-between mt-1">
+                    <p className="text-sm">
+                      Starting from{" "}
+                      <span className="text-lg font-medium">{d.price}</span>
+                    </p>
+
+                    <button className="inline-flex items-center gap-1 bg-white text-gray-900 text-xs font-semibold px-3 py-1.5 rounded-full shadow hover:bg-gray-100 transition">
+                      Explore Now →
+                    </button>
+                  </div>
+                </div>
+
               </div>
-            </div>
+            </SwiperSlide>
           ))}
-        </div>
+        </Swiper>
 
       </div>
     </section>
