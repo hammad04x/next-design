@@ -218,7 +218,7 @@ export default function TravelSlider() {
 
   return (
     <div className="container">
-      <section className="py-16">
+      <section className="">
         {/* Header */}
         <div className="flex justify-between items-center mb-8">
           <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900">
@@ -230,7 +230,7 @@ export default function TravelSlider() {
 
         {/* SLIDER WRAPPER */}
         <div className="overflow-hidden">
-          <div className="flex gap-6 transition-all duration-500 pb-[20px]">
+          <div className="flex gap-6 transition-all duration-500 mb-[50px]">
             {currentItems.map((agent, i) => (
               <div
                 key={`${agent.id}-${i}`}

@@ -111,7 +111,7 @@ export default function SponsoredPackage() {
 
   return (
     <div className="container">
-      <section className="py-16 ">
+      <section className="my-[65px]">
 
         <div
           className=" bg-white rounded-[28px] p-6 lg:p-8"

@@ -54,7 +54,7 @@ export default function PopularDestinations() {
   };
 
   return (
-    <section className=" container  py-16 px-4 sm:px-13">
+    <section className=" container px-4 sm:px-13">
       <div className=" mx-auto bg-white/80 rounded-3xl shadow-xl p-5">
 
         {/* Header */}

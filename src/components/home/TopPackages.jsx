@@ -114,7 +114,7 @@ export default function TopPackages() {
 
   return (
     <div className="container">
-    <section className="py-16">
+    <section className="">
 
       <div
         className=" mx-auto bg-white rounded-[28px] p-6 lg:p-8"
