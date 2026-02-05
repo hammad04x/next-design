@@ -33,3 +33,22 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+
+
+/* swiper-core.css — MINIMUM REQUIRED */
+
+.swiper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.swiper-wrapper {
+  display: flex;
+  transition-property: transform;
+}
+
+.swiper-slide {
+  flex-shrink: 0;
+}
