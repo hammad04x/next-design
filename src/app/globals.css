@@ -140,3 +140,19 @@ a {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+
+
+.container {
+  width: 92%;
+  max-width: 1400px; /* Desktop design width */
+  margin: 0 auto;
+
+  padding-left: 1rem;   /* 16px */
+  padding-right: 1rem;
+}
+
+.sub-container{
+  width: 92%;
+  margin: 0 auto;
+}

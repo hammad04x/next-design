@@ -54,8 +54,8 @@ export default function PopularDestinations() {
   };
 
   return (
-    <section className="w-full py-16 px-4 sm:px-13">
-      <div className="max-w-7xl mx-auto bg-white/80 rounded-3xl shadow-xl p-5">
+    <section className=" container  py-16 px-4 sm:px-13">
+      <div className=" mx-auto bg-white/80 rounded-3xl shadow-xl p-5">
 
         {/* Header */}
         <div className="flex items-center justify-between mb-6">

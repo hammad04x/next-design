@@ -7,9 +7,9 @@ import { MdFlightTakeoff } from "react-icons/md";
 
 export default function Navbar() {
   return (
-    <header className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-7xl">
+    <header className=" container fixed top-4 left-1/2 -translate-x-1/2 z-50">
       <div
-        className="
+        className=" 
           flex items-center justify-between px-4 sm:px-6 py-3
           rounded-[var(--radius-lg)]
           border border-[var(--border-soft)]

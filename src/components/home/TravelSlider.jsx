@@ -109,6 +109,7 @@ function Card({ data }) {
   };
 
   return (
+    
     <div className="bg-white rounded-[2rem] shadow-lg overflow-hidden border border-gray-100 flex flex-col h-full">
       {/* Top Section with Main Image – SAME AS YOUR PATH */}
       <div className="relative p-2.5 pb-0">
@@ -216,8 +217,8 @@ export default function TravelSlider() {
   );
 
   return (
-    <section className="w-full py-16 px-4 sm:px-13">
-      <div className="max-w-7xl mx-auto">
+    <div className="container">
+    <section className="py-16">
         {/* Header */}
         <div className="flex justify-between items-center mb-8">
           <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900">
@@ -228,12 +229,12 @@ export default function TravelSlider() {
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {currentItems.map((agent, i) => (
             <Card key={`${agent.id}-${i}`} data={agent} />
           ))}
         </div>
-      </div>
     </section>
+    </div>
   );
 }

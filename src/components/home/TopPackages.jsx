@@ -157,11 +157,12 @@ export default function TopPackages() {
   }, []);
 
   return (
-    <section className="py-16 px-6 sm:px-13 lg:px-13">
+    <div className="container">
+    <section className="py-16">
       <TicketClipDef />
 
       <div
-        className="max-w-[1400px] mx-auto bg-white rounded-[28px] p-2 lg:p-8"
+        className=" mx-auto bg-white rounded-[28px] p-2 lg:p-8"
         style={{
           boxShadow: "0 10px 40px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.04)",
         }}
@@ -198,5 +199,6 @@ export default function TopPackages() {
         </div>
       </div>
     </section>
+    </div>
   );
 }

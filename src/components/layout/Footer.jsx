@@ -7,8 +7,8 @@ const Footer = () => {
     const currentYear = new Date().getFullYear();
 
     return (
-        <footer className="footer">
-            <div className="footer-container max-w-7xl">
+        <footer className="footer ">
+            <div className="footer-container container">
 
                 <div className="footer-content">
 
@@ -74,7 +74,7 @@ const Footer = () => {
                     <div className="footer-column right-combined">
 
                         <h3 className="footer-heading full-width">
-                            More in Wheyer
+                            More in TravelX
                         </h3>
 
                         <div className="right-columns">
@@ -91,7 +91,7 @@ const Footer = () => {
 
                             <div className="sub-column">
                                 <ul className="footer-list">
-                                    <li>Wheyer</li>
+                                    <li>TravelX</li>
                                     <li>+91 83554 52582</li>
                                     <li>Contact@travelx.com</li>
                                 </ul>
@@ -105,7 +105,7 @@ const Footer = () => {
             </div>
 
             <div className="footer-copyright">
-                <p>Copyright © {currentYear} Wheyer. All Rights Reserved.</p>
+                <p>Copyright © {currentYear} TravelX. All Rights Reserved.</p>
             </div>
         </footer>
     );
