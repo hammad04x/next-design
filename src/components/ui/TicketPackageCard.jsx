@@ -2,11 +2,11 @@
 
 export default function TicketPackageCard({ p, sponsored = false }) {
     return (
-        <div className="flex-shrink-0 w-[317px]">
+        <div className="flex-shrink-0 w-[333px]">
 
             {/* IMAGE */}
             <div className="package-image-wrapper relative h-[180px] rounded-[1px] overflow-visible">
-                <div className="absolute inset-0 rounded-[6px] overflow-hidden">
+                <div className="absolute inset-0 rounded-[6px] overflow-hidden shadow-md z-1">
                     <img
                         src={p.image}
                         alt={p.title}
@@ -15,20 +15,12 @@ export default function TicketPackageCard({ p, sponsored = false }) {
                 </div>
 
                 {sponsored && (
-                    <div className="absolute -top-[-6px] -left-[6px] z-30">
+                    <div className="absolute -top-[0px] -left-[0px] z-1">
                         <div className="relative">
 
                             {/* main label */}
                             <div
-                                className="
-          bg-[#ffb000]
-          text-white
-          text-[17px]
-          font-medium
-          px-[22px] py-[4px]
-          shadow-[0_4px_10px_rgba(0,0,0,0.25)] rounded-sm
-        "
-                              
+                                className=" bg-[#ffb000] text-white text-[17px] font-medium px-[22px] py-[4px] shadow-[0_4px_10px_rgba(0,0,0,0.25)] rounded-[6px] "
                             >
                                 Sponsor
                             </div>
@@ -43,9 +35,9 @@ export default function TicketPackageCard({ p, sponsored = false }) {
             {/* TICKET CARD */}
             <div className="ticket-shell">
                 <div className="ticket-body" style={{ clipPath: "url(#ticket-scallop)" }}>
-                    <div className="px-[25px] py-[15px]">
+                    <div className="px-[25px] py-[15px] mt-[4px]">
 
-                        <div className="flex justify-between items-start mb-1">
+                        <div className="flex justify-between items-start ">
                             <h5 className="font-bold text-[14px] leading-tight mb-1 text-[#0f172a]">
                                 {p.title}
                             </h5>
@@ -54,13 +46,13 @@ export default function TicketPackageCard({ p, sponsored = false }) {
                             </span>
                         </div>
 
-                        <p className="text-[#64748b] text-[13px] mb-2">
+                        <p className="text-[#64748b] text-[13px]">
                             {p.location}
                         </p>
 
-                        <div className="border-t border-dashed border-gray-300 my-3" />
+                        <div className="border-t border-dashed border-gray-300 mt-1 mb-2" />
 
-                        <div className="grid grid-cols-2 gap-x-3 gap-y-2 text-[13px] mb-3 ml-2 text-[#64748b]">
+                        <div className="grid grid-cols-2 gap-x-3 gap-y-0.5 text-[13px] mb-2 ml-2 text-[#64748b]">
                             {p.features.map((f, i) => (
                                 <div key={i} className="flex items-start gap-2">
                                     <span className="text-gray-400 text-[10px] mt-[3px]">●</span>
@@ -69,7 +61,7 @@ export default function TicketPackageCard({ p, sponsored = false }) {
                             ))}
                         </div>
 
-                        <div className="bg-[#e0f2fe] px-3 py-1 border border-blue-400 rounded-sm mb-4 flex items-center justify-between gap-3">
+                        <div className="bg-[#e0f2fe] px-3 py-1 border border-blue-400 rounded-sm mb-2 flex items-center justify-between gap-3">
                             <p className="text-[#64748b] leading-tight flex-1 w-[60%]">
                                 <span className="text-[11px]">
                                 {p.note}
@@ -77,10 +69,10 @@ export default function TicketPackageCard({ p, sponsored = false }) {
                             </p>
 
                             <div className="text-right flex-shrink-0 w-[40%]">
-                                <div className="font-bold text-[15px] text-[#0f172a]">
+                                <div className="font-bold text-[14px] text-[#0f172a]">
                                     ₹{p.price} <span className="font-normal text-[10px]">/Person</span>
                                 </div>
-                                <div className="flex items-center gap-2 justify-end">
+                                <div className="flex items-center gap-1 justify-end">
                                     <span className="line-through text-[12px] text-[#94a3b8]">
                                         ₹{p.originalPrice}
                                     </span>

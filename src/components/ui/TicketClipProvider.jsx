@@ -1,7 +1,7 @@
 "use client";
 
 export default function TicketClipProvider() {
-  const W = 317;
+  const W = 333;
   const H = 320;
 
   const smallTop = [20, 51, 82];

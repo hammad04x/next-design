@@ -129,8 +129,10 @@ function Card({ data }) {
               <p className="text-[11px] font-bold leading-tight truncate pr-6">
                 {data.slides[miniIndex].title}
               </p>
-              <p className="text-gray-400 text-[9px]">
-                {data.slides[miniIndex].desc}
+              <p className="text-gray-400 text-[9px]  ">
+               
+                 {data.slides[miniIndex].desc}
+             
               </p>
 
               <div className="absolute right-[-7px] -bottom-1 rounded-tl-[2rem] p-1">
