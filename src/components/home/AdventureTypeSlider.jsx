@@ -50,7 +50,8 @@ export default function AdventureTypeSlider() {
   };
 
   return (
-    <section className="adventure-wrapper max-w-7xl w-[92%] mx-[auto] mt-[90px] mb-[60px] rounded-[20px]">
+    <div className="container">
+    <section className="adventure-wrapper  mt-[90px] mb-[60px] rounded-[20px]">
       <div className=" mx-auto bg-white rounded-[24px] px-6 py-8 relative">
         <div className="w-[95%] mx-auto">
           <h2 className="text-3xl font-bold mb-6">Explore Adventure by Type</h2>
@@ -97,5 +98,6 @@ export default function AdventureTypeSlider() {
         </div>
       </div>
     </section>
+    </div>
   );
 }

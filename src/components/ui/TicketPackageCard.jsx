@@ -28,12 +28,12 @@ export default function TicketPackageCard({ p, sponsored = false }) {
           px-[22px] py-[4px]
           shadow-[0_4px_10px_rgba(0,0,0,0.25)] rounded-sm
         "
-                              
+
                             >
                                 Sponsor
                             </div>
 
-                           
+
                         </div>
                     </div>
                 )}
@@ -72,7 +72,7 @@ export default function TicketPackageCard({ p, sponsored = false }) {
                         <div className="bg-[#e0f2fe] px-3 py-1 border border-blue-400 rounded-sm mb-4 flex items-center justify-between gap-3">
                             <p className="text-[#64748b] leading-tight flex-1 w-[60%]">
                                 <span className="text-[11px]">
-                                {p.note}
+                                    {p.note}
                                 </span>
                             </p>
 
