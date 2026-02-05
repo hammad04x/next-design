@@ -14,7 +14,7 @@
 
 /* Primary */
 .btn-primary {
-  background: linear-gradient(135deg, var(--primary), var( --primary-dark));
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
   color: #fff;
   box-shadow: var(--shadow-sm);
   border-radius: var(--radius-sm);
@@ -25,7 +25,7 @@
   box-shadow: var(--shadow-md);
 }
 .btn-secondry {
-  background: linear-gradient(135deg, var(--primary), var( --primary-dark));
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
   color: #fff;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-sm);

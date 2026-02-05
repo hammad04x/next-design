@@ -13,7 +13,7 @@ const Footer = () => {
                 <div className="footer-content">
 
                     {/* SECTION 1 - Brand */}
-                    <div className="footer-column footer-brand">
+                    <div className="footer-column footer-brand w-[294px]" >
                         <h2 className="footer-logo">TravelX</h2>
                         <p className="footer-description">
                             Lorem ipsum dolor sit amet consectetur. Vulputate erat ornare id sollicitudin turpis enim fames. Dolor enim ut nunc

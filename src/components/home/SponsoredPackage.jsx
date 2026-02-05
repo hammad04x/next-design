@@ -114,7 +114,7 @@ export default function SponsoredPackage() {
       <section className="py-16 ">
 
         <div
-          className=" bg-white rounded-[28px] p-8 lg:p-8"
+          className=" bg-white rounded-[28px] p-6 lg:p-8"
           style={{
             boxShadow:
               "0 10px 40px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.04)",
