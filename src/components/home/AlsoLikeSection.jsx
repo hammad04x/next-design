@@ -55,6 +55,7 @@ export default function AlsoLikeSection() {
   };
 
   return (
+     <div className="container">
     <section className="w-full py-16 px-4 sm:px-13">
       <div className="max-w-7xl mx-auto space-y-14">
 
@@ -139,5 +140,6 @@ export default function AlsoLikeSection() {
 
       </div>
     </section>
+    </div>
   );
 }

@@ -2,8 +2,6 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import { useRef } from "react";
-import AdventureCard from "./AdventureCard";
-
 const items = [
   {
     title: "Trekking",
@@ -51,6 +49,8 @@ export default function AdventureTypeSlider() {
   };
 
   return (
+    <div className="container">
+
     <section className="adventure-wrapper max-w-7xl w-[92%] mx-[auto] mt-[90px] mb-[60px] rounded-[20px]">
       <div className=" mx-auto bg-white rounded-[24px] px-6 py-8 relative">
         <div className="w-[95%] mx-auto">
@@ -98,5 +98,6 @@ export default function AdventureTypeSlider() {
         </div>
       </div>
     </section>
+    </div>
   );
 }

@@ -216,6 +216,7 @@ export default function TravelSlider() {
   );
 
   return (
+      <div className="container">
     <section className="w-full py-16 px-4 sm:px-13">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
@@ -228,12 +229,13 @@ export default function TravelSlider() {
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 overflow-hidden">
           {currentItems.map((agent, i) => (
             <Card key={`${agent.id}-${i}`} data={agent} />
           ))}
         </div>
       </div>
     </section>
+    </div>
   );
 }

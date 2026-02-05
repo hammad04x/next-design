@@ -17,6 +17,7 @@ export default function HeroSection() {
 
   return (
     <>
+     <div className="container">
       {/* HERO */}
       <section className="relative z-20 w-full h-[45vh] min-h-[400px] flex items-center justify-center overflow-visible">
         <div
@@ -41,7 +42,7 @@ export default function HeroSection() {
         </div>
 
         <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-full px-4 z-50 hidden md:flex justify-center">
-          <div className="mx-auto max-w-5xl bg-white rounded-full shadow-2xl py-2 px-3 flex items-center ">
+          <div className="mx-auto max-w-5xl bg-white rounded-full shadow-2xl py-3 px-4 flex items-center ">
             <div className="flex-1 flex flex-col text-left px-5 border-r border-gray-200">
               <label className="text-[10px] font-bold text-gray-900 uppercase mb-0.5">
                 Where
@@ -188,6 +189,7 @@ export default function HeroSection() {
           </Button>
         </div>
       </div>
+       </div>
     </>
   );
 }

@@ -54,6 +54,7 @@ export default function PopularDestinations() {
   };
 
   return (
+    <div className="container">
     <section className="w-full py-16 px-4 sm:px-13">
       <div className="max-w-7xl mx-auto bg-white/80 rounded-3xl shadow-xl p-5">
 
@@ -113,5 +114,6 @@ export default function PopularDestinations() {
 
       </div>
     </section>
+    </div>
   );
 }
