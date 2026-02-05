@@ -43,7 +43,7 @@ export default function SearchDropdown({
   return (
     <div
       ref={dropdownRef}
-      className="absolute bg-white rounded-lg shadow-2xl border border-gray-100 py-2 mt-2 z-[100] w-full max-h-64 overflow-y-auto scrollbar-hide"
+      className="absolute bg-white rounded-lg shadow-2xl border border-gray-100 py-2 mt-2 z-[100] w-full max-h-64 overflow-y-auto scrollbar-hide "
       style={{
         top: customTop || position?.top || "60px",
         left: position?.left || 0,
@@ -54,7 +54,7 @@ export default function SearchDropdown({
           <div
             key={index}
             onClick={() => onSelect(suggestion)}
-            className="px-4 py-2.5 hover:bg-gray-50 cursor-pointer text-sm text-gray-700 transition-colors"
+            className="px-4 py-2.5 hover:bg-gray-50 cursor-pointer text-sm text-gray-700 transition-colors;"
           >
             {suggestion}
           </div>
