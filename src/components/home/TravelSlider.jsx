@@ -239,7 +239,7 @@ export default function TravelSlider() {
             Top Travel Agents on TravelX
           </h2>
 
-          <div className="self-end sm:self-auto">
+          <div className="flex gap-3">
             <SliderArrows onPrev={prev} onNext={next} />
           </div>
 

@@ -7,7 +7,7 @@ export default function SearchDropdown({
   onSelect,
   searchValue,
   position,
-  customTop, // Add customTop prop for easy positioning
+  customTop,
 }) {
   const dropdownRef = useRef(null);
 
@@ -29,7 +29,6 @@ export default function SearchDropdown({
 
   if (!isOpen) return null;
 
-  // If searchValue exactly matches a suggestion, show all suggestions
   const exactMatch = suggestions.some(
     (item) => item.toLowerCase() === searchValue.toLowerCase()
   );
