@@ -1,18 +1,14 @@
-  "use client";
-  import { useState, useRef, useEffect } from "react";
-  import Button from "@/components/ui/Button";
-  import Image from "next/image";
-  import SliderArrows from "../ui/SlideArrows";
-  import TicketPackageCard from "@/components/ui/TicketPackageCard";
+"use client";
+
+import { useState } from "react";
+import Button from "@/components/ui/Button";
+import TicketPackageCard from "@/components/ui/TicketPackageCard";
+import SliderArrows from "../ui/SlideArrows";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 
-
-
-
-  export default function TopPackages() {
-    const scrollRef = useRef(null);
-    const [canLeft, setCanLeft] = useState(false);
-    const [canRight, setCanRight] = useState(true);
+export default function SponsoredPackage() {
+  const [swiper, setSwiper] = useState(null);
 
     const packages = [
       {
@@ -92,68 +88,51 @@
       },
     ];
 
-    const check = () => {
-      const el = scrollRef.current;
-      if (!el) return;
-      setCanLeft(el.scrollLeft > 5);
-      setCanRight(el.scrollLeft < el.scrollWidth - el.clientWidth - 5);
-    };
-
-    const move = (dir) => {
-      const el = scrollRef.current;
-      el.scrollBy({
-        left: dir === "left" ? -el.clientWidth / 1.1 : el.clientWidth / 1.1,
-        behavior: "smooth",
-      });
-      setTimeout(check, 300);
-    };
-
-    useEffect(() => {
-      check();
-    }, []);
-
-    return (
-      <div className="container">
-      <section className="">
-
+  return (
+    <div className="container">
+      <section className="my-[65px]">
         <div
-          className=" mx-auto bg-white rounded-[28px] p-6 lg:p-8"
+          className="bg-white rounded-[28px] p-6 lg:p-8"
           style={{
-            boxShadow: "0 10px 40px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.04)",
+            boxShadow:
+              "0 10px 40px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.04)",
           }}
         >
           {/* Header */}
           <div className="flex justify-between items-center mb-10">
-            <h2 className="text-[44px] font-bold text-[#0f172a] leading-none">
+            <h2 className="text-2xl font-bold text-[#0f172a] leading-none">
               Top Packages
             </h2>
+
             <SliderArrows
-              onPrev={() => move("left")}
-              onNext={() => move("right")}
-              disabledPrev={!canLeft}
-              disabledNext={!canRight}
+              onPrev={() => swiper?.slidePrev()}
+              onNext={() => swiper?.slideNext()}
             />
           </div>
 
           {/* Slider */}
-          <div
-            ref={scrollRef}
-            onScroll={check}
-            className="flex gap-6 overflow-x-auto no-scrollbar snap-x snap-mandatory pb-2 snap-start "
+          <Swiper
+            onSwiper={setSwiper}
+            slidesPerView="auto"
+            spaceBetween={24}
+            freeMode
+            className="pb-6 sponsored-swiper"
           >
             {packages.map((p) => (
-              <TicketPackageCard key={p.id} p={p} />
+              <SwiperSlide key={p.id} className="!w-auto">
+                {/* SHADOW SAFE ZONE */}
+                <div className="ticket-shadow-wrap">
+                  <TicketPackageCard p={p} />
+                </div>
+              </SwiperSlide>
             ))}
+          </Swiper>
 
-          </div>
-
-          <div className="flex justify-end mt-2">
-            <Button variant="primary">
-              View More
-            </Button>
+          <div className="flex justify-end ">
+            <Button variant="primary">View More</Button>
           </div>
         </div>
       </section>
-      </div>
-    );
-  }
+    </div>
+  );
+}
