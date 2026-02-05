@@ -213,12 +213,12 @@ export default function TravelSlider() {
 
   const currentItems = [...agentsData, ...agentsData].slice(
     startIndex,
-    startIndex + 4,
+    startIndex + 4
   );
 
   return (
     <div className="container">
-    <section className="py-16">
+      <section className="py-16">
         {/* Header */}
         <div className="flex justify-between items-center mb-8">
           <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900">
@@ -228,13 +228,20 @@ export default function TravelSlider() {
           <SliderArrows onPrev={prev} onNext={next} />
         </div>
 
-        {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {currentItems.map((agent, i) => (
-            <Card key={`${agent.id}-${i}`} data={agent} />
-          ))}
+        {/* SLIDER WRAPPER */}
+        <div className="overflow-hidden">
+          <div className="flex gap-6 transition-all duration-500">
+            {currentItems.map((agent, i) => (
+              <div
+                key={`${agent.id}-${i}`}
+                className="min-w-[calc(100%/3-16px)]"
+              >
+                <Card data={agent} />
+              </div>
+            ))}
+          </div>
         </div>
-    </section>
+      </section>
     </div>
   );
 }
