@@ -230,7 +230,7 @@ export default function TravelSlider() {
 
         {/* SLIDER WRAPPER */}
         <div className="overflow-hidden">
-          <div className="flex gap-6 transition-all duration-500">
+          <div className="flex gap-6 transition-all duration-500 pb-[20px]">
             {currentItems.map((agent, i) => (
               <div
                 key={`${agent.id}-${i}`}
