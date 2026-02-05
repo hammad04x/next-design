@@ -66,13 +66,15 @@ body {
   color: var(--text-main);
   line-height: 1.6;
   background: linear-gradient(
-    145deg,
-    #e7f3ff 0%,
-    #c7c8a5 25%,
-    #75a1c5 45%,
-    #fff3e8 70%,
-    #708fb2 100%
-  );
+  180deg,
+  #dbeeff 0%,
+  #eaf5ff 22%,
+  #fff4e6 50%,
+  #eaf5ff 78%,
+  #dbeeff 100%
+);
+
+
 }
 
 /* =========================
@@ -145,7 +147,13 @@ a {
 .container {
   width: 92%;
   max-width: 1400px; /* Desktop design width */
-  margin:0 auto;
+  margin: 0 auto;
 
- 
+  padding-left: 1rem;   /* 16px */
+  padding-right: 1rem;
+}
+
+.sub-container{
+  width: 92%;
+  margin: 0 auto;
 }

@@ -197,5 +197,6 @@ export default function TopPackages() {
         </div>
       </div>
     </section>
+    </div>
   );
 }

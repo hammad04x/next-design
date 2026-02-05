@@ -18,7 +18,7 @@ export default function HeroSection() {
   return (
     <>
       {/* HERO */}
-      <section className="relative z-20 w-full h-[45vh] min-h-[400px] flex items-center justify-center overflow-visible">
+      <section className="relative z-20  h-[45vh] min-h-[400px] flex items-center justify-center overflow-visible">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{

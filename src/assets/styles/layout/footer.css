@@ -54,6 +54,8 @@
   background: #2cb3ff;
   color: white;
   border-color: #2cb3ff;
+  cursor: pointer;
+
 }
 
 /* Places Column */
@@ -103,6 +105,9 @@
   font-size: 0.88rem;
   margin-bottom: 0.6rem;
   color: #333;
+}
+.footer-list li:hover {
+  cursor: pointer;
 }
 
 /* ADDRESS STYLE - MATCH IMAGE */

@@ -143,27 +143,27 @@ export default function SponsoredPackage() {
 />
 
                     </div>
+
+                    {/* Slider */}
+                    <div
+                        ref={scrollRef}
+                        onScroll={check}
+                        className="flex gap-8 overflow-x-auto no-scrollbar snap-x snap-mandatory pb-2 pl-[7px]"
+                    >
+                        {packages.map((p) => (
+                            <TicketPackageCard key={p.id} p={p} sponsored />
+                        ))}
+
+
+                    </div>
+
+                    <div className="flex justify-end mt-8">
+                        <Button variant="primary">
+                            View More
+                        </Button>
+                    </div>
                 </div>
-
-                {/* Slider */}
-                <div
-                    ref={scrollRef}
-                    onScroll={check}
-                    className="flex gap-8 overflow-x-auto no-scrollbar snap-x snap-mandatory pb-2 pl-[7px]"
-                >
-                    {packages.map((p) => (
-                        <TicketPackageCard key={p.id} p={p} sponsored />
-                    ))}
-
-
-                </div>
-
-                <div className="flex justify-end mt-8">
-                   <Button variant="primary">
-                               View More
-                             </Button>
-                </div>
-            </div>
-        </section>
+            </section>
+        </div>
     );
 }

@@ -139,5 +139,6 @@ export default function AlsoLikeSection() {
 
       </div>
     </section>
+    </div>
   );
 }
