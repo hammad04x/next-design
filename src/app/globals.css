@@ -1,4 +1,3 @@
-
 @import "tailwindcss";
 @import "../assets/styles/common/button.css";
 @import "../assets/styles/layout/navbar.css";
@@ -139,4 +138,14 @@ a {
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+
+
+.container {
+  width: 92%;
+  max-width: 1400px; /* Desktop design width */
+  margin:0 auto;
+
+ 
 }

@@ -126,10 +126,9 @@ export default function SponsoredPackage() {
     useEffect(() => { check(); }, []);
 
     return (
-        <section className="py-16 px-6 sm:px-13 lg:px-13 ">
-            <TicketClipDef />
+        <section className="container py-16 ">
 
-            <div className="max-w-[7xl]  mx-auto bg-white rounded-[28px] p-8 lg:p-7"
+            <div className="  bg-white rounded-[28px] p-8 lg:p-7"
                 style={{ boxShadow: '0 10px 40px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.04)' }}>
 
                 {/* Header */}

@@ -109,7 +109,7 @@ function Card({ data }) {
   };
 
   return (
-    <div className="bg-white rounded-[2rem] shadow-lg overflow-hidden border border-gray-100 flex flex-col h-full">
+    <div className="conatiner bg-white rounded-[2rem] shadow-lg overflow-hidden border border-gray-100 flex flex-col h-full">
       {/* Top Section with Main Image – SAME AS YOUR PATH */}
       <div className="relative p-2.5 pb-0">
         <div className="relative rounded-[1.5rem] overflow-hidden">
@@ -216,8 +216,8 @@ export default function TravelSlider() {
   );
 
   return (
-    <section className="w-full py-16 px-4 sm:px-13">
-      <div className="max-w-7xl mx-auto">
+    <section className="container py-16 ">
+      <div className=" ">
         {/* Header */}
         <div className="flex justify-between items-center mb-8">
           <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900">

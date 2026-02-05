@@ -2,7 +2,6 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import { useRef } from "react";
-import AdventureCard from "./AdventureCard";
 
 const items = [
   {
@@ -51,52 +50,54 @@ export default function AdventureTypeSlider() {
   };
 
   return (
-    <section className="adventure-wrapper max-w-7xl w-[92%] mx-[auto] mt-[90px] mb-[60px] rounded-[20px]">
-      <div className=" mx-auto bg-white rounded-[24px] px-6 py-8 relative">
-        <div className="w-[95%] mx-auto">
-          <h2 className="text-3xl font-bold mb-6">Explore Adventure by Type</h2>
+      <section className="container">
+      <div className="adventure-wrapper  mx-[auto] mt-[90px] mb-[60px] rounded-[20px]">
+        <div className=" mx-auto bg-white rounded-[24px] px-6 py-8 relative">
+          <div className="w-[95%] mx-auto">
+            <h2 className="text-3xl font-bold mb-6">Explore Adventure by Type</h2>
 
-          <div
-            ref={sliderRef}
-            className="flex gap-6 overflow-x-auto scroll-smooth no-scrollbar snap-x snap-mandatory"
-          >
-            {items.map((item, i) => (
-              <div
-                key={i}
-                className="adventure-card max-w-[23.2%] sm:w-1/2 md:w-1/3 lg:w-1/4 snap-start relative overflow-hidden rounded-xl"
-              >
-                <div className="relative w-full h-[220px]">
-                  <Image
-                    src={item.img}
-                    alt={item.title}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                    priority={i === 0}
-                  />
+            <div
+              ref={sliderRef}
+              className="flex gap-6 overflow-x-auto scroll-smooth no-scrollbar snap-x snap-mandatory"
+            >
+              {items.map((item, i) => (
+                <div
+                  key={i}
+                  className="adventure-card max-w-[23.2%] sm:w-1/2 md:w-1/3 lg:w-1/4 snap-start relative overflow-hidden rounded-xl"
+                >
+                  <div className="relative w-full h-[220px]">
+                    <Image
+                      src={item.img}
+                      alt={item.title}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      priority={i === 0}
+                    />
+                  </div>
+
+                  <div className="adventure-overlay"></div>
+                  <span className="adventure-title">{item.title}</span>
                 </div>
+              ))}
+            </div>
 
-                <div className="adventure-overlay"></div>
-                <span className="adventure-title">{item.title}</span>
-              </div>
-            ))}
+            <button
+              onClick={scrollLeft}
+              className="hidden md:flex absolute left-2 top-[62%] -translate-y-1/2 bg-black text-white shadow-md p-2 rounded-full z-20"
+            >
+              <ChevronLeft />
+            </button>
+
+            <button
+              onClick={scrollRight}
+              className="hidden md:flex absolute right-2 top-[62%] -translate-y-1/2 bg-black text-white shadow-md p-2 rounded-full z-20"
+            >
+              <ChevronRight />
+            </button>
           </div>
-
-          <button
-            onClick={scrollLeft}
-            className="hidden md:flex absolute left-2 top-[62%] -translate-y-1/2 bg-black text-white shadow-md p-2 rounded-full z-20"
-          >
-            <ChevronLeft />
-          </button>
-
-          <button
-            onClick={scrollRight}
-            className="hidden md:flex absolute right-2 top-[62%] -translate-y-1/2 bg-black text-white shadow-md p-2 rounded-full z-20"
-          >
-            <ChevronRight />
-          </button>
         </div>
-      </div>
-    </section>
+        </div>
+      </section>
   );
 }

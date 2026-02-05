@@ -29,7 +29,7 @@ export default function HeroSection() {
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/20" />
         </div>
 
-        <div className="relative z-10 flex flex-col items-center text-center max-w-5xl px-4">
+        <div className=" container relative z-10 flex flex-col items-center text-center  px-4">
           <h1 className="text-white font-serif drop-shadow-xl mb-4">
             ADVENTURE TRIPS IN INDIA
           </h1>
@@ -37,6 +37,7 @@ export default function HeroSection() {
           <h4 className="text-white/90 font-extralight tracking-wider mb-10">
             Fixed itineraries • Optional add-ons • Instant confirmation •
             Verified partners
+
           </h4>
         </div>
 
@@ -110,8 +111,8 @@ export default function HeroSection() {
               </select>
             </div>
             <Button variant="secondry">
-            Search
-          </Button>
+              Search
+            </Button>
           </div>
         </div>
       </section>
