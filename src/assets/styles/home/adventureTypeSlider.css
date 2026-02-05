@@ -1,19 +1,20 @@
 .adventure-wrapper {
- box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .adventure-card {
-  position: relative;
-  flex: 0 0 auto;
-  height: 135px;
-  overflow: hidden;
+  height: 135px; /* 🔒 locked as requested */
   cursor: pointer;
 }
 
 .adventure-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.55), rgba(0,0,0,0.1));
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.55),
+    rgba(0, 0, 0, 0.1)
+  );
 }
 
 .adventure-title {
@@ -27,4 +28,13 @@
   font-weight: 700;
   z-index: 10;
   text-align: center;
+}
+
+/* hide scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
